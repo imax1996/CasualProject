@@ -2,6 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public class Level {
+    public GameObject levelGO;
+    public float leghthLevel;
+}
+
 /// <summary>
 /// Создаёт уровень.
 /// </summary>
@@ -11,6 +16,8 @@ public class LevelManager : MonoBehaviour {
     [SerializeField] float timeAfterLastZone;
     [SerializeField] int countOfObstacle;
     [SerializeField] float timeInputZone;
+    [SerializeField] int maxKeys;
+    [SerializeField] InputKeys[] password; 
 
     [Header("Set Dynamically: ZonesManager")]
     internal CubeMove cubeMove;
@@ -27,15 +34,7 @@ public class LevelManager : MonoBehaviour {
     }
 
     public void CreateZones() {
-        /* 
-         * создай мне уровень исходя из:
-         * игрок на таком то месте и со скоростью 10 (cubeMove.speed)
-         * без препятствия или с препятствием или обманка
-         * таких то кнопок
-         * с такой то длинной ввода
-         */
-
-        Level level = levelCreator.LevelCreate(timeUntilFirstZone * cubeMove.speed, countOfObstacle, timeAfterLastZone * cubeMove.speed, cubeMove.transform.position.x, timeInputZone);
+        Level level = levelCreator.LevelCreate(timeUntilFirstZone, countOfObstacle, timeAfterLastZone, cubeMove.transform.position.x, timeInputZone, maxKeys, password, cubeMove.speed);
 
         currentZone = level.levelGO;
         cubeMove.pointToBackZ = level.leghthLevel;

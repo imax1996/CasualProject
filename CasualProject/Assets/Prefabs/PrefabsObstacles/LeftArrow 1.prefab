@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4372777227621561382}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 22.5}
+  m_LocalPosition: {x: 0, y: 0, z: 62.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6764671034093223591}
@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 5865631461319457567}
   - component: {fileID: 3770811920297391441}
   - component: {fileID: 7414982042389583073}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -134,7 +134,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6764671032517806311}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cubes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -149,7 +149,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6764671032517806312}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 20}
+  m_LocalPosition: {x: 0, y: 0, z: 60}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6764671032647267992}
@@ -169,7 +169,7 @@ GameObject:
   - component: {fileID: 6764671032647267989}
   - component: {fileID: 6764671032647267990}
   - component: {fileID: 6764671032647267991}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -314,7 +314,7 @@ GameObject:
   - component: {fileID: 7774848072022917867}
   - component: {fileID: 7774848072022917876}
   - component: {fileID: 7774848072022917866}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: InputZonePrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -329,8 +329,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7774848072022917877}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 5}
-  m_LocalScale: {x: 3, y: 10, z: 10}
+  m_LocalPosition: {x: 0, y: 0, z: 25}
+  m_LocalScale: {x: 3, y: 10, z: 50}
   m_Children: []
   m_Father: {fileID: 6764671034093223591}
   m_RootOrder: 0
@@ -360,4 +360,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8afe3feb4fe5fd04fb42a6eb50a9f205, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key: 276
+  rightMove: 2
+  wrongMove: 1
+  keys: 0100000001000000000000000000000001000000

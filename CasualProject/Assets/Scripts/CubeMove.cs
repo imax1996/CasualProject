@@ -7,16 +7,14 @@ using UnityEngine;
 /// </summary>
 public class CubeMove : MonoBehaviour {
     [Header("Set in Inspector: CubeMove")]
-    [SerializeField] internal float speed = 5;
+    [SerializeField] internal float speed = 10;
     [SerializeField] internal float pointToBackZ = 100;
 
     [Header("Set Dynamically: CubeMove")]
-    InputMoveCube   im;
     Rigidbody       rb;
 
     void Awake() {
         rb = GetComponent<Rigidbody>();
-        im = GetComponent<InputMoveCube>();
     }
 
     void FixedUpdate() {
@@ -29,39 +27,41 @@ public class CubeMove : MonoBehaviour {
         }
     }
 
+    void OnCollisionEnter(Collision collision) {
+        //game over
+        gameObject.SetActive(false);
+    }
+
     void OnTriggerEnter(Collider other) {
-        im.keyCodes = new Queue<KeyCode>();
-        im.countOfInput = 1;
-        im.setKey = other.GetComponent<Zone>().key;
-        UI.S.ShowKey(im.setKey);
+        InputPassword.S.enabled = true;
+        InputPassword.S.GetPassword(other.GetComponent<Zone>());
     }
 
     void OnTriggerExit(Collider other) {
-        im.countOfInput = 0;
-        if (im.keyCodes.Count > 0) {
-            StartCoroutine(Move(im.keyCodes.Dequeue()));
-        }
-        UI.S.TakeInput();
+        //я вышел
+        StartCoroutine(Move(InputPassword.S.Move()));
     }
 
-    IEnumerator Move(KeyCode key) {
+    IEnumerator Move(ActionMove move) {
         float posCurX = transform.position.x;
         float posTarX = posCurX;
 
-        switch (key) {
-            case KeyCode.LeftArrow:
-                posTarX -= 3;
+        switch (move) {
+            case ActionMove.None:
+                posTarX += 0;
                 break;
-            case KeyCode.RightArrow:
+            case ActionMove.Right:
                 posTarX += 3;
+                break;
+            case ActionMove.Left:
+                posTarX -= 3;
                 break;
         }
 
         float percent = 0;
-        float speedAnimation = 0.2f;
 
         while (percent <= 1) {
-            percent += Time.deltaTime / speedAnimation;
+            percent += Time.deltaTime * speed;
             transform.position = new Vector3(Mathf.Lerp(posCurX, posTarX, percent), transform.position.y, transform.position.z);
             yield return null;
         }

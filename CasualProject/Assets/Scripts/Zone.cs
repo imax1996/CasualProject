@@ -9,11 +9,16 @@ namespace UnityEngine {
 
 public class Zone : MonoBehaviour {
     [Header("Set in Inspector: SimpleZone")]
-    [SerializeField] internal KeyCode key = KeyCode.None;
-
-    [SerializeField] ActionMove rightMove = ActionMove.None;
-    [SerializeField] ActionMove wrongMove = ActionMove.None;
+    [SerializeField] internal ActionMove rightMove = ActionMove.None;
+    [SerializeField] internal ActionMove wrongMove = ActionMove.None;
 
     // [Header("Set Dynamically: SimpleZone")]
-    [SerializeField] InputKeys[] keys;
+    [SerializeField] internal InputKeys[] keys;
+
+    public void CreateKey(int countOfKeys, InputKeys[] keysSet) {
+        keys = new InputKeys[countOfKeys];
+        for (int i = 0; i < countOfKeys; i++) {
+            keys[i] = keysSet[Random.Range(0, keysSet.Length)];
+        }
+    }
 }
