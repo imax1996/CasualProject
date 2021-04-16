@@ -10,6 +10,7 @@ public class LevelManager : MonoBehaviour {
     [SerializeField] float timeUntilFirstZone;
     [SerializeField] float timeAfterLastZone;
     [SerializeField] int countOfObstacle;
+    [SerializeField] float timeInputZone;
 
     [Header("Set Dynamically: ZonesManager")]
     internal CubeMove cubeMove;
@@ -27,14 +28,14 @@ public class LevelManager : MonoBehaviour {
 
     public void CreateZones() {
         /* 
-         * создай мне зону исходя из:
-         * игрок на таком то месте и со скоростью 5 (cubeMove.speed)
+         * создай мне уровень исходя из:
+         * игрок на таком то месте и со скоростью 10 (cubeMove.speed)
          * без препятствия или с препятствием или обманка
          * таких то кнопок
          * с такой то длинной ввода
          */
 
-        Level level = levelCreator.LevelCreate(timeUntilFirstZone * cubeMove.speed, countOfObstacle, timeAfterLastZone * cubeMove.speed, cubeMove.transform.position.x);
+        Level level = levelCreator.LevelCreate(timeUntilFirstZone * cubeMove.speed, countOfObstacle, timeAfterLastZone * cubeMove.speed, cubeMove.transform.position.x, timeInputZone);
 
         currentZone = level.levelGO;
         cubeMove.pointToBackZ = level.leghthLevel;

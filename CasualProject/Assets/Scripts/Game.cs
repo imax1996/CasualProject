@@ -15,6 +15,7 @@ public class Game : MonoBehaviour {
     MoveCamera      moveCamera;
     LevelManager    levelManager;
     GameObject      playerCube;
+    int             level;
 
     void Awake() {
         S = this;
@@ -26,6 +27,8 @@ public class Game : MonoBehaviour {
     /// Начинает игру.
     /// </summary>
     void Start() {
+        level = 0;
+
         //создали игрока
         playerCube = Instantiate(playerPrefab, Vector3.zero, Quaternion.identity) as GameObject;
         moveCamera.player = playerCube;
@@ -44,6 +47,7 @@ public class Game : MonoBehaviour {
         
         // переместить игрока в начало
         playerCube.transform.position = new Vector3(playerCube.transform.position.x, playerCube.transform.position.y, 0);
+        level++;
 
         //установить новые зоны
         levelManager.CreateZones();
