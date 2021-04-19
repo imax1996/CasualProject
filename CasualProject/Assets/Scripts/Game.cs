@@ -34,6 +34,6 @@ public class Game : MonoBehaviour {
 
         levelManager.CreateZones();
 
-        StartCoroutine(UILevel.S.AnimUntilLoadLevel());
+        //загрузка завершена
     }
 }
