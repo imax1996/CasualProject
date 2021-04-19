@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4372777227621561382}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 62.5}
+  m_LocalPosition: {x: 0, y: 0, z: 22.499998}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6764671034093223591}
@@ -149,7 +149,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6764671032517806312}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 60}
+  m_LocalPosition: {x: 0, y: 0, z: 19.999998}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6764671032647267992}
@@ -329,8 +329,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7774848072022917877}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 25}
-  m_LocalScale: {x: 3, y: 10, z: 50}
+  m_LocalPosition: {x: 0, y: 0, z: 4.999999}
+  m_LocalScale: {x: 3, y: 10, z: 9.999998}
   m_Children: []
   m_Father: {fileID: 6764671034093223591}
   m_RootOrder: 0
@@ -362,4 +362,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rightMove: 2
   wrongMove: 1
-  keys: 0100000001000000000000000000000001000000
+  keys: 0200000003000000

@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UI : MonoBehaviour {
-    public static UI S;
+public class UIPassword : MonoBehaviour {
+    public static UIPassword S;
 
     // [Header("Set in Inspector: UI")]
     [SerializeField] internal GameObject password;
-    [SerializeField] GameObject arrow;
+    [SerializeField] GameObject arrowPrefab;
 
     [Header("Set Dynamically: UI")]
     int countOfmaxKey = 0;
@@ -20,7 +20,7 @@ public class UI : MonoBehaviour {
     public void ShowKey(InputKeys[] inputKeys) {
         if (inputKeys.Length > countOfmaxKey) {
             for (int i = 0; i < inputKeys.Length - countOfmaxKey; i++) {
-                arrows.Add(Instantiate(arrow, password.transform) as GameObject);
+                arrows.Add(Instantiate(arrowPrefab, password.transform) as GameObject);
             }
             countOfmaxKey = inputKeys.Length;
         }
@@ -32,6 +32,12 @@ public class UI : MonoBehaviour {
                     break;
                 case InputKeys.Right:
                     arrows[i].transform.localRotation = Quaternion.Euler(0, 0, 180);
+                    break;
+                case InputKeys.Up:
+                    arrows[i].transform.localRotation = Quaternion.Euler(0, 0, 270);
+                    break;
+                case InputKeys.Down:
+                    arrows[i].transform.localRotation = Quaternion.Euler(0, 0, 90);
                     break;
             }
             arrows[i].SetActive(true);
@@ -45,6 +51,6 @@ public class UI : MonoBehaviour {
     }
 
     public void TakeInput() {
-        arrow.SetActive(false);
+        arrowPrefab.SetActive(false);
     }
 }

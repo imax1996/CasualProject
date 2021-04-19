@@ -7,20 +7,17 @@ public class Level {
     public float leghthLevel;
 }
 
-/// <summary>
-/// Создаёт уровень.
-/// </summary>
 public class LevelManager : MonoBehaviour {
     [Header("Set in Inspector: ZonesManager")]
-    [SerializeField] float timeUntilFirstZone;
-    [SerializeField] float timeAfterLastZone;
-    [SerializeField] int countOfObstacle;
-    [SerializeField] float timeInputZone;
-    [SerializeField] int maxKeys;
-    [SerializeField] InputKeys[] password; 
+    [SerializeField] float timeUntilFirstZone = 3;
+    [SerializeField] float timeAfterLastZone = 2;
 
     [Header("Set Dynamically: ZonesManager")]
-    internal CubeMove cubeMove;
+    public CubeMove cubeMove;
+    [SerializeField] int countOfObstacle = 3;
+    [SerializeField] float timeInputZone = 1;
+    [SerializeField] int maxKeys = 2;
+    [SerializeField] InputKeys[] password;
 
     LevelCreator    levelCreator;
     GameObject      currentZone;
@@ -34,9 +31,15 @@ public class LevelManager : MonoBehaviour {
     }
 
     public void CreateZones() {
+
         Level level = levelCreator.LevelCreate(timeUntilFirstZone, countOfObstacle, timeAfterLastZone, cubeMove.transform.position.x, timeInputZone, maxKeys, password, cubeMove.speed);
 
         currentZone = level.levelGO;
         cubeMove.pointToBackZ = level.leghthLevel;
+
+        countOfObstacle++;
+        timeInputZone -= 0.1f;
+        maxKeys++;
+
     }
 }

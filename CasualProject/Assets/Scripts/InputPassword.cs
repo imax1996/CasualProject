@@ -5,21 +5,44 @@ using UnityEngine;
 public class InputPassword : MonoBehaviour {
     public static InputPassword S;
     // [Header("Set in Inspector: InputPassword")]
+
     [Header("Set Dynamically: InputPassword")]
-    int index;
-    ActionMove move;
-    Zone zone;
+    int         index;
+    ActionMove  move;
+    Zone        zone;
+    Vector2     downPos;
 
     void Awake() {
         S = this;
     }
 
     void Update() {
-        if (Input.GetKeyDown(KeyCode.RightArrow)) {
-            CheckInput(InputKeys.Right);
+        Vector2 mousePos = Camera.main.ScreenToViewportPoint(Input.mousePosition);
+
+        if (Input.GetMouseButtonDown(0)) {
+            downPos = mousePos;
         }
-        if (Input.GetKeyDown(KeyCode.LeftArrow)) {
-            CheckInput(InputKeys.Left);
+        else if (Input.GetMouseButtonUp(0)) {
+            CheckInput(CountInput(mousePos - downPos));
+        }
+    }
+
+    InputKeys CountInput(Vector3 offset) {
+        if (Mathf.Abs(offset.x) > Mathf.Abs(offset.y)) {
+            if (offset.x > 0) {
+                return InputKeys.Right;
+            }
+            else {
+                return InputKeys.Left;
+            }
+        }
+        else {
+            if (offset.y > 0) {
+                return InputKeys.Up;
+            }
+            else {
+                return InputKeys.Down;
+            }
         }
     }
 
@@ -28,11 +51,11 @@ public class InputPassword : MonoBehaviour {
         move = tempZone.wrongMove;
         zone = tempZone;
         //вывод ui
-        UI.S.ShowKey(zone.keys);
+        UIPassword.S.ShowKey(zone.keys);
     }
 
     public ActionMove Move() {
-        UI.S.DisableArrow();
+        UIPassword.S.DisableArrow();
         enabled = false;
         return move;
     }

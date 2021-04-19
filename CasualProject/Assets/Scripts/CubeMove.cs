@@ -2,9 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-/// <summary>
-/// Двигает куб.
-/// </summary>
 public class CubeMove : MonoBehaviour {
     [Header("Set in Inspector: CubeMove")]
     [SerializeField] internal float speed = 10;
@@ -29,7 +26,7 @@ public class CubeMove : MonoBehaviour {
 
     void OnCollisionEnter(Collision collision) {
         //game over
-        gameObject.SetActive(false);
+        Game.S.StartAndOverGame(false);
     }
 
     void OnTriggerEnter(Collider other) {
@@ -38,7 +35,6 @@ public class CubeMove : MonoBehaviour {
     }
 
     void OnTriggerExit(Collider other) {
-        //я вышел
         StartCoroutine(Move(InputPassword.S.Move()));
     }
 
