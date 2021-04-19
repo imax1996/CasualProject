@@ -14,9 +14,6 @@ public class LevelManager : MonoBehaviour {
 
     [Header("Set Dynamically: ZonesManager")]
     public CubeMove cubeMove;
-    [SerializeField] int countOfObstacle = 3;
-    [SerializeField] float timeInputZone = 1;
-    [SerializeField] int maxKeys = 2;
     [SerializeField] InputKeys[] password;
 
     LevelCreator    levelCreator;
@@ -30,7 +27,7 @@ public class LevelManager : MonoBehaviour {
         if (currentZone != null) { Destroy(currentZone); }
     }
 
-    public void CreateZones() {
+    public void CreateZones(int countOfObstacle, float timeInputZone, int maxKeys) {
 
         Level level = levelCreator.LevelCreate(timeUntilFirstZone, countOfObstacle, timeAfterLastZone, cubeMove.transform.position.x, timeInputZone, maxKeys, password, cubeMove.speed);
 

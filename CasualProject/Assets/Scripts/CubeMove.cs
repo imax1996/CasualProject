@@ -8,7 +8,11 @@ public class CubeMove : MonoBehaviour {
     [SerializeField] internal float pointToBackZ = 100;
 
     [Header("Set Dynamically: CubeMove")]
-    Rigidbody       rb;
+    internal bool nextLevel;
+
+    Rigidbody   rb;
+    float       offsetX;
+    float       offset = 0;
 
     void Awake() {
         rb = GetComponent<Rigidbody>();
@@ -16,17 +20,32 @@ public class CubeMove : MonoBehaviour {
 
     void FixedUpdate() {
         rb.velocity = Vector3.forward * speed;
+
+        if (offset > 0) {
+            float _offsetX = offsetX * Time.fixedDeltaTime * speed/2;
+            Vector3 newPos;
+            if (Mathf.Abs(_offsetX) > Mathf.Abs(offset)) {
+                newPos = transform.position + Vector3.right * offset * Mathf.Sign(offsetX);
+            } else {
+                newPos = transform.position + Vector3.right * _offsetX;
+            }
+            offset -= Mathf.Abs(_offsetX);
+            rb.MovePosition(newPos);
+        }
     }
 
     void LateUpdate() {
-        if (transform.position.z >= pointToBackZ) {
-            Game.S.NewStart();
+        if (transform.position.z >= pointToBackZ && nextLevel) {
+            //выигрыш
+            nextLevel = false;
+            StartCoroutine(UIAnim.S.NextLevel());
         }
     }
 
     void OnCollisionEnter(Collision collision) {
         //game over
-        Game.S.StartAndOverGame(false);
+        gameObject.SetActive(false);
+        UIAnim.S.GameOver();
     }
 
     void OnTriggerEnter(Collider other) {
@@ -35,31 +54,14 @@ public class CubeMove : MonoBehaviour {
     }
 
     void OnTriggerExit(Collider other) {
-        StartCoroutine(Move(InputPassword.S.Move()));
-    }
-
-    IEnumerator Move(ActionMove move) {
-        float posCurX = transform.position.x;
-        float posTarX = posCurX;
-
-        switch (move) {
-            case ActionMove.None:
-                posTarX += 0;
-                break;
+        switch (InputPassword.S.Move()) {
             case ActionMove.Right:
-                posTarX += 3;
+                offsetX = 3;
                 break;
             case ActionMove.Left:
-                posTarX -= 3;
+                offsetX = -3;
                 break;
         }
-
-        float percent = 0;
-
-        while (percent <= 1) {
-            percent += Time.deltaTime * speed;
-            transform.position = new Vector3(Mathf.Lerp(posCurX, posTarX, percent), transform.position.y, transform.position.z);
-            yield return null;
-        }
+        offset = 3;
     }
 }

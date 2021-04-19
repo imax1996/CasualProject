@@ -17,18 +17,7 @@ public class UILevel : MonoBehaviour {
         image = imageFade.GetComponent<Image>();
     }
 
-    public void StartCor(int i) {
-        switch (i) {
-            case 1:
-                StartCoroutine(NextLevelFirstAnim());
-                break;
-            case 2:
-                StartCoroutine(NextLevelSecondAnim());
-                break;
-        }
-    }
-
-    IEnumerator NextLevelFirstAnim() {
+    public IEnumerator NextLevelFirstAnim() {
         float percent = 0;
         while (percent <= 1) {
             percent += Time.deltaTime;
@@ -36,11 +25,9 @@ public class UILevel : MonoBehaviour {
             image.color = new Color(0, 1, 1, Mathf.Lerp(0, 1, percent));
             yield return null;
         }
-
-        //начинай загрузку
     }
 
-    IEnumerator NextLevelSecondAnim() {
+    public IEnumerator NextLevelSecondAnim() {
         float percent = 0;
         imageFade.transform.localScale = Vector3.one * 3;
         image.color = new Color(0,1,1,1);
