@@ -20,15 +20,15 @@ public class UILevel : MonoBehaviour {
     public void StartCor(int i) {
         switch (i) {
             case 1:
-                StartCoroutine(NextLevelFirstAnim());
+                StartCoroutine(AnimStartLevel());
                 break;
             case 2:
-                StartCoroutine(NextLevelSecondAnim());
+                StartCoroutine(AnimUntilLoadLevel());
                 break;
         }
     }
 
-    IEnumerator NextLevelFirstAnim() {
+    public IEnumerator AnimStartLevel() {
         float percent = 0;
         while (percent <= 1) {
             percent += Time.deltaTime;
@@ -38,9 +38,10 @@ public class UILevel : MonoBehaviour {
         }
 
         //начинай загрузку
+        Game.S.StartAndOverGame(true);
     }
 
-    IEnumerator NextLevelSecondAnim() {
+    public IEnumerator AnimUntilLoadLevel() {
         float percent = 0;
         imageFade.transform.localScale = Vector3.one * 3;
         image.color = new Color(0,1,1,1);
@@ -52,5 +53,7 @@ public class UILevel : MonoBehaviour {
         }
 
         imageFade.transform.localScale = Vector3.zero;
+
+        Game.S.StartAndOverGame(false);
     }
 }

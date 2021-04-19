@@ -1,16 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIMenu : MonoBehaviour {
-    //[Header("Set in Inspector: UIMenu")]
-    // [Header("Set Dynamically: UIMenu")]
+    public Button buttonStart;
+    public Button buttonExit;
 
     public void StartGame() {
-        Game.S.StartAndOverGame(true);
+        ButtonBoolean(false);
+        StartCoroutine(UILevel.S.AnimStartLevel());
     }
 
     public void ExitGame() {
         Application.Quit();
+    }
+
+    void ButtonBoolean(bool IsInteractable) {
+        buttonStart.interactable = IsInteractable;
+        buttonExit.interactable = IsInteractable;
     }
 }

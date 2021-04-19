@@ -26,7 +26,8 @@ public class CubeMove : MonoBehaviour {
 
     void OnCollisionEnter(Collision collision) {
         //game over
-        Game.S.StartAndOverGame(false);
+        gameObject.SetActive(false);
+        StartCoroutine(UILevel.S.AnimUntilLoadLevel());
     }
 
     void OnTriggerEnter(Collider other) {
