@@ -23,7 +23,7 @@ public class Game : MonoBehaviour {
     public void ResetParameters() {
         level = 0;
         countOfObstacle = 3;
-        timeInputZone = 1;
+        timeInputZone = 1f;
         maxKeys = 2;
     }
 
