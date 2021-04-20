@@ -8,7 +8,7 @@ public class UIArrow : MonoBehaviour {
     Color grey = Color.grey;
     Color red = Color.red;
     Color green = Color.green;
-    [SerializeField] float speed = 1;
+    float animSpeed = 2;
 
     // [Header("Set Dynamically: UIArrow")]
     Image image;
@@ -35,7 +35,7 @@ public class UIArrow : MonoBehaviour {
 
         float percent = 0;
         while (percent <= 1) {
-            percent += Time.deltaTime * speed;
+            percent += Time.deltaTime * animSpeed;
             image.color = Color.Lerp(image.color, setColor, percent);
             yield return null;
         }
