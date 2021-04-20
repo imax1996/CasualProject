@@ -29,18 +29,9 @@ public class Game : MonoBehaviour {
 
     void IncreaseDifficult() {
         level++;
-        int ran = Random.Range(0, 3);
-        switch (ran) {
-            case 0:
-                countOfObstacle++;
-                break;
-            case 1:
-                timeInputZone -= 0.1f;
-                break;
-            case 2:
-                maxKeys++;
-                break;
-        }
+        countOfObstacle++;
+        timeInputZone = Mathf.Clamp(timeInputZone - 0.05f, 0.3f, 100f);
+        maxKeys++;
     }
 
     public void NewStart() {
@@ -53,6 +44,5 @@ public class Game : MonoBehaviour {
 
         playerCube.SetActive(true);
         playerCube.GetComponent<CubeMove>().nextLevel = true;
-        //загрузка завершена
     }
 }

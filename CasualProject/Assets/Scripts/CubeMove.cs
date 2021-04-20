@@ -57,11 +57,12 @@ public class CubeMove : MonoBehaviour {
         switch (InputPassword.S.Move()) {
             case ActionMove.Right:
                 offsetX = 3;
+                offset = 3;
                 break;
             case ActionMove.Left:
                 offsetX = -3;
+                offset = 3;
                 break;
         }
-        offset = 3;
     }
 }

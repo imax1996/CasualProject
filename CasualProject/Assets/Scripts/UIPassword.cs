@@ -11,7 +11,7 @@ public class UIPassword : MonoBehaviour {
 
     [Header("Set Dynamically: UI")]
     int countOfmaxKey = 0;
-    List<GameObject> arrows = new List<GameObject>();
+    public List<GameObject> arrows = new List<GameObject>();
 
     void Awake() {
         S = this;
