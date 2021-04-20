@@ -1674,7 +1674,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   password: {fileID: 1747577607}
   arrowPrefab: {fileID: 4006606678971486292, guid: 48c4fa6ac6ad1964fbaeb619940c4f07, type: 3}
-  arrows: []
 --- !u!1 &1190315344
 GameObject:
   m_ObjectHideFlags: 0
