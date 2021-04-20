@@ -2464,6 +2464,8 @@ GameObject:
   - component: {fileID: 129309625131797448}
   - component: {fileID: 129309625131797444}
   - component: {fileID: 129309625131797447}
+  - component: {fileID: 129309625131797452}
+  - component: {fileID: 129309625131797453}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -2520,3 +2522,32 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &129309625131797452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 129309625131797449}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4de160f509c0964f84532e8897e36f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!111 &129309625131797453
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 129309625131797449}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 0}
+  m_Animations:
+  - {fileID: 7400000, guid: 3dc243bd95853cc4d9d7df6d5521c64a, type: 2}
+  - {fileID: 7400000, guid: 15ecfd267de28fd41abb2839ff630eb4, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
