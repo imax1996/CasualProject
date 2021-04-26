@@ -121,8 +121,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5377698806466382145}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 23.999996}
-  m_LocalScale: {x: 3, y: 10, z: 47.999992}
+  m_LocalPosition: {x: 0, y: 0, z: 15.999999}
+  m_LocalScale: {x: 3, y: 10, z: 31.999998}
   m_Children: []
   m_Father: {fileID: 8981395660015547667}
   m_RootOrder: 0
@@ -154,7 +154,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rightMove: 1
   wrongMove: 2
-  keys: 0300000003000000020000000000000001000000000000000000000001000000
+  keys: 02000000030000000200000000000000
 --- !u!1 &7030727894435950398
 GameObject:
   m_ObjectHideFlags: 0
@@ -179,7 +179,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7030727894435950398}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 60.499992}
+  m_LocalPosition: {x: 0, y: 0, z: 44.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8981395660015547667}
@@ -209,7 +209,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8981395658370925404}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 57.999992}
+  m_LocalPosition: {x: 0, y: 0, z: 42}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8981395659045649708}
@@ -359,7 +359,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obstacle: {fileID: 8981395660015547676}
-  playerPosXAfterObstacle: 3
   inputZone: {fileID: 5377698806466382145}
   cubes: {fileID: 8981395658370925404}
   lengthObstacle: {fileID: 7030727894435950398}
+  playerPosXAfterObstacle: 3
