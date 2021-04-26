@@ -2,7 +2,11 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UILevel : MonoBehaviour {
+/// <summary>
+///  ласс, определ€ющий UI дл€ уровн€.
+/// </summary>
+public class UILevel : MonoBehaviour
+{
     public static UILevel S;
 
     [Header("Set in Inspector: UILevel")]
@@ -10,14 +14,21 @@ public class UILevel : MonoBehaviour {
 
     Image image;
 
-    void Awake() {
+    void Awake()
+    {
         S = this;
         image = imageFade.GetComponent<Image>();
     }
 
-    public IEnumerator NextLevelFirstAnim() {
+    /// <summary>
+    /// јнимаци€ фейда с увеличением.
+    /// </summary>
+    /// <returns></returns>
+    public IEnumerator NextLevelFirstAnim()
+    {
         float percent = 0;
-        while (percent <= 1) {
+        while (percent <= 1)
+        {
             percent += Time.deltaTime;
             imageFade.transform.localScale = Vector3.one * Mathf.Lerp(0,3,percent);
             image.color = new Color(0, 1, 1, Mathf.Lerp(0, 1, percent));
@@ -25,12 +36,18 @@ public class UILevel : MonoBehaviour {
         }
     }
 
-    public IEnumerator NextLevelSecondAnim() {
+    /// <summary>
+    /// јнимаци€ фейда с исчезновением.
+    /// </summary>
+    /// <returns></returns>
+    public IEnumerator NextLevelSecondAnim()
+    {
         float percent = 0;
         imageFade.transform.localScale = Vector3.one * 3;
         image.color = new Color(0,1,1,1);
 
-        while (percent <= 1) {
+        while (percent <= 1)
+        {
             percent += Time.deltaTime;
             image.color = new Color(0, 1, 1, Mathf.Lerp(1,0,percent));
             yield return null;

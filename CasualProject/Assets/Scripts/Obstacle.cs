@@ -1,14 +1,25 @@
 using UnityEngine;
 
-public class Obstacle : MonoBehaviour {
-    [Header("Set in Inspector: ObstacleCreator")]
-    public GameObject obstacle;
-    public GameObject inputZone;
-    public GameObject cubes;
-    public GameObject lengthObstacle;
-    public float playerPosXAfterObstacle;
+/// <summary>
+/// Класс, определяющий препятствие.
+/// </summary>
+public class Obstacle : MonoBehaviour
+{
+    public GameObject   obstacle;
+    public GameObject   inputZone;
+    public GameObject   cubes;
+    public GameObject   lengthObstacle;
+    public float        playerPosXAfterObstacle;
 
-    public void Change(float timeInputZone, int keys, InputKeys[] password, float playerSpeed) {
+    /// <summary>
+    /// Изменяет шаблон препятствия под параметры уровня.
+    /// </summary>
+    /// <param name="timeInputZone">Время на ввод одного символа.</param>
+    /// <param name="keys">Кол-во симвлолов ввода.</param>
+    /// <param name="password">Пароль для ввода.</param>
+    /// <param name="playerSpeed">Скорость игрока.</param>
+    public void ChangeObstacle(float timeInputZone, int keys, InputKeys[] password, float playerSpeed)
+    {
         Zone zone = inputZone.GetComponent<Zone>();
         zone.CreateKey(keys, password);
 

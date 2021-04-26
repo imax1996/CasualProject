@@ -1,11 +1,16 @@
 using UnityEngine;
 
-public class MoveCamera : MonoBehaviour {
-    [Header("Set Dynamically: MoveCamera")]
+/// <summary>
+///  ласс, определ€ющий движение камеры за игроком.
+/// </summary>
+public class MoveCamera : MonoBehaviour
+{
     public GameObject player;
 
-    void Update() {
-        if (player != null) {
+    void Update()
+    {
+        if (player != null)
+        {
             transform.position = player.transform.position + new Vector3(0,2,-6);
         }
     }

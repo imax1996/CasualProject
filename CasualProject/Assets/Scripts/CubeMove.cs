@@ -1,6 +1,10 @@
 using UnityEngine;
 
-public class CubeMove : MonoBehaviour {
+/// <summary>
+/// Класс, определяющий движение куба (игрока).
+/// </summary>
+public class CubeMove : MonoBehaviour
+{
     [Header("Set in Inspector: CubeMove")]
     public float speed = 10;
     public float pointToBackZ = 100;
@@ -12,19 +16,25 @@ public class CubeMove : MonoBehaviour {
     float       offsetX;
     float       offset;
 
-    void Awake() {
+    void Awake()
+    {
         rb = GetComponent<Rigidbody>();
     }
 
-    void FixedUpdate() {
+    void FixedUpdate()
+    {
         rb.velocity = Vector3.forward * speed;
 
-        if (offset > 0) {
+        if (offset > 0)
+        {
             float _offsetX = offsetX * Time.fixedDeltaTime * speed/2;
             Vector3 newPos;
-            if (Mathf.Abs(_offsetX) > Mathf.Abs(offset)) {
+            if (Mathf.Abs(_offsetX) > Mathf.Abs(offset))
+            {
                 newPos = transform.position + Vector3.right * offset * Mathf.Sign(offsetX);
-            } else {
+            }
+            else
+            {
                 newPos = transform.position + Vector3.right * _offsetX;
             }
             offset -= Mathf.Abs(_offsetX);
@@ -32,27 +42,45 @@ public class CubeMove : MonoBehaviour {
         }
     }
 
-    void LateUpdate() {
-        if (transform.position.z >= pointToBackZ && nextLevel) {
+    void LateUpdate()
+    {
+        if (transform.position.z >= pointToBackZ && nextLevel)
+        {
             //выигрыш
             nextLevel = false;
             StartCoroutine(UIAnim.S.NextLevel());
         }
     }
 
+    /// <summary>
+    /// Выполнить при столкновении с препятствием.
+    /// </summary>
+    /// <param name="collision"></param>
     void OnCollisionEnter(Collision collision) {
         //game over
         gameObject.SetActive(false);
         UIAnim.S.GameOver();
     }
 
-    void OnTriggerEnter(Collider other) {
+    /// <summary>
+    /// Выполнить при входе в зону ввода.
+    /// </summary>
+    /// <param name="other"></param>
+    void OnTriggerEnter(Collider other)
+    {
         InputPassword.S.enabled = true;
         InputPassword.S.GetPassword(other.GetComponent<Zone>());
+        UIPassword.S.ShowKey(other.GetComponent<Zone>().keys);
     }
 
-    void OnTriggerExit(Collider other) {
-        switch (InputPassword.S.Move()) {
+    /// <summary>
+    /// Выполнить при выходе из зоны ввода.
+    /// </summary>
+    /// <param name="other"></param>
+    void OnTriggerExit(Collider other)
+    {
+        switch (InputPassword.S.Move())
+        {
             case ActionMove.Right:
                 offsetX = 3;
                 offset = 3;

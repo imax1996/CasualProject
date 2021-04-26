@@ -1,76 +1,102 @@
 using UnityEngine;
 
-public class InputPassword : MonoBehaviour {
+/// <summary>
+/// Класс, определяющий систему ввода.
+/// </summary>
+public class InputPassword : MonoBehaviour
+{
     public static InputPassword S;
 
-    [Header("Set Dynamically: InputPassword")]
     int         index;
     ActionMove  move;
     Zone        zone;
     Vector2     downPos;
 
-    void Awake() {
+    void Awake()
+    {
         S = this;
     }
 
-    void Update() {
+    void Update()
+    {
         Vector2 mousePos = Camera.main.ScreenToViewportPoint(Input.mousePosition);
 
-        if (Input.GetMouseButtonDown(0)) {
+        if (Input.GetMouseButtonDown(0))
+        {
             downPos = mousePos;
         }
-        else if (Input.GetMouseButtonUp(0)) {
-            CheckInput(CountInput(mousePos - downPos));
+        else if (Input.GetMouseButtonUp(0))
+        {
+            CheckInput(TranslateToInputKeys(mousePos - downPos));
         }
     }
 
-    InputKeys CountInput(Vector3 offset) {
-        if (Mathf.Abs(offset.x) > Mathf.Abs(offset.y)) {
-            if (offset.x > 0) {
-                return InputKeys.Right;
-            }
-            else {
-                return InputKeys.Left;
-            }
+    /// <summary>
+    /// Перевод ввода в Inputkeys.
+    /// </summary>
+    /// <param name="offset">Введённый знак.</param>
+    /// <returns></returns>
+    private InputKeys TranslateToInputKeys(Vector3 offset)
+    {
+        //if(Mathf.Abs(offset.x) == Mathf.Abs(offset.y))
+        //{
+        //    return InputKeys.None;
+        //}
+        if (Mathf.Abs(offset.x) > Mathf.Abs(offset.y))
+        {
+            return (offset.x > 0) ? InputKeys.Right : InputKeys.Left;
         }
-        else {
-            if (offset.y > 0) {
-                return InputKeys.Up;
-            }
-            else {
-                return InputKeys.Down;
-            }
+        else
+        {
+            return (offset.y > 0) ? InputKeys.Right : InputKeys.Left;
         }
     }
 
-    public void GetPassword(Zone tempZone) {
+    /// <summary>
+    /// Получает пароль из зоны.
+    /// </summary>
+    /// <param name="tempZone">Зона с паролем.</param>
+    public void GetPassword(Zone tempZone)
+    {
         index = 0;
-        move = tempZone.wrongMove;
         zone = tempZone;
-        //вывод ui
-        UIPassword.S.ShowKey(zone.keys);
+        move = zone.wrongMove;
     }
 
-    public ActionMove Move() {
+    /// <summary>
+    /// Отключает ввод.
+    /// </summary>
+    /// <returns></returns>
+    public ActionMove Move()
+    {
         UIPassword.S.DisableArrow();
         enabled = false;
         return move;
     }
 
-    void CheckInput(InputKeys inputKeys) {
-        if (inputKeys == zone.keys[index]) {
+    /// <summary>
+    /// Проверка введённого и текущего знака.
+    /// </summary>
+    /// <param name="inputKeys"></param>
+    private void CheckInput(InputKeys inputKeys)
+    {
+        if (inputKeys == zone.keys[index])
+        {
             //если правильный ввод
             UIPassword.S.arrows[index].GetComponent<UIArrow>().ChangeColorToGreen();
             index++;
 
-            if (index == zone.keys.Length) {
+            if (index == zone.keys.Length)
+            {
                 move = zone.rightMove;
                 enabled = false;
             }
         }
-        else {
+        else
+        {
             //если не правильный ввод
-            for (int i = 0; i < zone.keys.Length; i++) {
+            for (int i = 0; i < zone.keys.Length; i++)
+            {
                 UIPassword.S.arrows[i].GetComponent<UIArrow>().ChangeColorToRed();
             }
             index = 0;

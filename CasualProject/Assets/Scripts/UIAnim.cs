@@ -33,8 +33,7 @@ public class UIAnim : MonoBehaviour {
         StartCoroutine(UILevel.S.NextLevelFirstAnim());
         yield return new WaitForSeconds(1);
         canvasMenu.SetActive(false);
-        Game.S.ResetParameters();
-        Game.S.NewStart();
+        Game.S.StartNewLevel();
         canvasProgress.SetActive(true);
         StartCoroutine(UILevel.S.NextLevelSecondAnim());
         yield return null;
@@ -43,7 +42,7 @@ public class UIAnim : MonoBehaviour {
     public IEnumerator NextLevel() {
         StartCoroutine(UILevel.S.NextLevelFirstAnim());
         yield return new WaitForSeconds(1);
-        Game.S.NewStart();
+        Game.S.StartNextLevel();
         StartCoroutine(UILevel.S.NextLevelSecondAnim());
         yield return null;
     }

@@ -2,7 +2,11 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UIArrow : MonoBehaviour {
+/// <summary>
+///  ласс, определ€ющий UI дл€ стрелок.
+/// </summary>
+public class UIArrow : MonoBehaviour
+{
     [Header("Set in Inspector: UIArrow")]
     Color grey = Color.grey;
     Color red = Color.red;
@@ -11,35 +15,41 @@ public class UIArrow : MonoBehaviour {
 
     Image image;
 
-    void Awake() {
+    void Awake()
+    {
         image = GetComponent<Image>();
     }
 
-    public void ChangeColorToRed() {
+    public void ChangeColorToRed()
+    {
         StopAllCoroutines();
         StartCoroutine(ChangeColor(grey));
     }
 
-    public void ChangeColorToGreen() {
+    public void ChangeColorToGreen()
+    {
         StopAllCoroutines();
         StartCoroutine(ChangeColor(green));
     }
 
-
-    IEnumerator ChangeColor(Color setColor) {
-        if (setColor == grey) {
+    IEnumerator ChangeColor(Color setColor)
+    {
+        if (setColor == grey)
+        {
             image.color = red;
         }
 
         float percent = 0;
-        while (percent <= 1) {
+        while (percent <= 1)
+        {
             percent += Time.deltaTime * animSpeed;
             image.color = Color.Lerp(image.color, setColor, percent);
             yield return null;
         }
     }
 
-    void OnDisable() {
+    void OnDisable()
+    {
         image.color = grey;
     }
 }

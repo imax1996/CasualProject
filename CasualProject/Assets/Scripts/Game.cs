@@ -1,44 +1,57 @@
 using UnityEngine;
 
-public class Game : MonoBehaviour {
+/// <summary>
+/// Класс, определяющий параметры игры.
+/// </summary>
+public class Game : MonoBehaviour
+{
     public static Game S;
 
     [Header("Set in Inspector: Game")]
-    public GameObject   playerCube;
-    public int          level;
+    [HideInInspector] public int    level;
+    public GameObject               playerCube;
+    private LevelManager            levelManager;
 
-    int             countOfObstacle;
-    int             maxKeys;
-    float           timeInputZone;
-    LevelManager    levelManager;
-
-    void Awake() {
+    private void Awake()
+    {
         S = this;
         levelManager = GetComponent<LevelManager>();
     }
 
-    public void ResetParameters() {
-        level = 0;
-        countOfObstacle = 3;
-        timeInputZone = 1f;
-        maxKeys = 2;
+    /// <summary>
+    /// Начинает новый уровень.
+    /// </summary>
+    public void StartNewLevel()
+    {
+        levelManager.ResetParameters();
+        CreateLevel();
+        EnablePlayer();
     }
 
-    void IncreaseDifficult() {
-        level++;
-        countOfObstacle++;
-        timeInputZone = Mathf.Clamp(timeInputZone - 0.05f, 0.3f, 100f);
-        maxKeys++;
+    /// <summary>
+    /// Начинает следующий уровень.
+    /// </summary>
+    public void StartNextLevel()
+    {
+        levelManager.IncreaseDifficult();
+        CreateLevel();
+        EnablePlayer();
     }
 
-    public void NewStart() {
-        levelManager.DeleteZones();
+    /// <summary>
+    /// Создать уровень.
+    /// </summary>
+    private void CreateLevel() {
+        levelManager.DeleteObstacles();
+        levelManager.CreateObstacles();
+    }
 
+    /// <summary>
+    /// Активирует игрока.
+    /// </summary>
+    private void EnablePlayer()
+    {
         playerCube.transform.position = Vector3.zero;
-        IncreaseDifficult();
-
-        levelManager.CreateZones(countOfObstacle, timeInputZone, maxKeys);
-
         playerCube.SetActive(true);
         playerCube.GetComponent<CubeMove>().nextLevel = true;
     }
