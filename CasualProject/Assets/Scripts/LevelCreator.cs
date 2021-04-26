@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class LevelCreator : MonoBehaviour{
@@ -7,8 +5,6 @@ public class LevelCreator : MonoBehaviour{
     [SerializeField] Obstacle[] playerInside;
     [SerializeField] Obstacle[] playerLeft;
     [SerializeField] Obstacle[] playerRight;
-
-    //[Header("Set Dynamically: Level")]
 
     public Level LevelCreate(float timeUntilFirstZone, int countOfObstacle, float timeAterLastZone, float playerPosX, float timeInputZone, int maxKeys, InputKeys[] password, float playerSpeed) {
         Level level = new Level();
@@ -22,8 +18,6 @@ public class LevelCreator : MonoBehaviour{
 
             Instantiate(obstacle.obstacle, posForObstacle, Quaternion.identity, levelgo.transform);
 
-            //показать зоне возможные кнопки
-
             posForObstacle.x += obstacle.playerPosXAfterObstacle;
             posForObstacle.z += obstacle.lengthObstacle.transform.position.z;
         }
@@ -35,7 +29,6 @@ public class LevelCreator : MonoBehaviour{
     }
 
     Obstacle ChooseObstacle(float posX) {
-        //выбор препятствия должен быть исходя из места игрока
         if (Mathf.Approximately(posX, 0)) {
             return playerInside[Random.Range(0, playerInside.Length)];
         }

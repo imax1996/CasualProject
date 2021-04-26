@@ -1,12 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class MoveCamera : MonoBehaviour {
-    // [Header("Set in Inspector: MoveCamera")]
-
     [Header("Set Dynamically: MoveCamera")]
-    [SerializeField] internal GameObject player;
+    public GameObject player;
 
     void Update() {
         if (player != null) {

@@ -1,10 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class InputPassword : MonoBehaviour {
     public static InputPassword S;
-    // [Header("Set in Inspector: InputPassword")]
 
     [Header("Set Dynamically: InputPassword")]
     int         index;

@@ -1,17 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class UIProgressBar : MonoBehaviour {
-    // [Header("Set in Inspector: UIProgressBar")]
-    public CubeMove player;
-    public GameObject canvasProgress;
-    public Image progressImage;
-    public Text level0;
-    public Text level1;
-
-    // [Header("Set Dynamically: UIProgressBar")]
+    [Header("Set in Inspector: UIProgressBar")]
+    public CubeMove     player;
+    public GameObject   canvasProgress;
+    public Image        progressImage;
+    public Text         level0;
+    public Text         level1;
 
     void Update() {
         level0.text = (Game.S.level - 1).ToString();

@@ -1,11 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-
-public class Level {
-    public GameObject levelGO;
-    public float leghthLevel;
-}
 
 public class LevelManager : MonoBehaviour {
     [Header("Set in Inspector: ZonesManager")]
@@ -13,8 +6,9 @@ public class LevelManager : MonoBehaviour {
     [SerializeField] float timeAfterLastZone = 2;
 
     [Header("Set Dynamically: ZonesManager")]
-    public CubeMove cubeMove;
     [SerializeField] InputKeys[] password;
+
+    public CubeMove cubeMove;
 
     LevelCreator    levelCreator;
     GameObject      currentZone;

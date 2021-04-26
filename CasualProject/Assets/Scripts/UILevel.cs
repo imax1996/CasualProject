@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,7 +8,6 @@ public class UILevel : MonoBehaviour {
     [Header("Set in Inspector: UILevel")]
     public GameObject imageFade;
 
-    // [Header("Set Dynamically: UILevel")]
     Image image;
 
     void Awake() {

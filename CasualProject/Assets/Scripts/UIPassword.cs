@@ -1,17 +1,16 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class UIPassword : MonoBehaviour {
     public static UIPassword S;
 
-    // [Header("Set in Inspector: UI")]
-    [SerializeField] internal GameObject password;
+    [Header("Set in Inspector: UIPassword")]
+    public GameObject password;
     [SerializeField] GameObject arrowPrefab;
 
-    [Header("Set Dynamically: UI")]
-    int countOfmaxKey = 0;
+    [Header("Set Dynamically: UIPassword")]
     public List<GameObject> arrows = new List<GameObject>();
+    int countOfmaxKey;
 
     void Awake() {
         S = this;

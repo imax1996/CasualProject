@@ -1,18 +1,16 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CubeMove : MonoBehaviour {
     [Header("Set in Inspector: CubeMove")]
-    [SerializeField] internal float speed = 10;
-    [SerializeField] internal float pointToBackZ = 100;
+    public float speed = 10;
+    public float pointToBackZ = 100;
 
     [Header("Set Dynamically: CubeMove")]
-    internal bool nextLevel;
+    public bool nextLevel;
 
     Rigidbody   rb;
     float       offsetX;
-    float       offset = 0;
+    float       offset;
 
     void Awake() {
         rb = GetComponent<Rigidbody>();

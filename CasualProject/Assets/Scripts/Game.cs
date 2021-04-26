@@ -1,19 +1,16 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Game : MonoBehaviour {
     public static Game S;
 
     [Header("Set in Inspector: Game")]
-    public GameObject playerCube;
+    public GameObject   playerCube;
+    public int          level;
 
-    //[Header("Set Dynamically: Game")]
     int             countOfObstacle;
-    float           timeInputZone;
     int             maxKeys;
+    float           timeInputZone;
     LevelManager    levelManager;
-    internal int    level;
 
     void Awake() {
         S = this;

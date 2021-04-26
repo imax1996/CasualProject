@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,12 +6,10 @@ public class UIAnim : MonoBehaviour {
     public static UIAnim S;
 
     [Header("Set in Inspector: UIMenu")]
-    public GameObject canvasProgress;
-    public GameObject canvasMenu;
-    public Button buttonStart;
-    public Button buttonExit;
-
-    //[Header("Set Dynamically: UIMenu")]
+    public GameObject   canvasProgress;
+    public GameObject   canvasMenu;
+    public Button       buttonStart;
+    public Button       buttonExit;
 
     void Awake() {
         S = this;

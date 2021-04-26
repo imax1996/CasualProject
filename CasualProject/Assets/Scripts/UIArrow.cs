@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,7 +9,6 @@ public class UIArrow : MonoBehaviour {
     Color green = Color.green;
     float animSpeed = 2;
 
-    // [Header("Set Dynamically: UIArrow")]
     Image image;
 
     void Awake() {
