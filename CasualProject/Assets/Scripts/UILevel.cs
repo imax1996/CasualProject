@@ -10,11 +10,12 @@ public class UILevel : MonoBehaviour
     public static UILevel S;
 
     [Header("Set in Inspector: UILevel")]
-    public GameObject imageFade;
+    public GameObject   imageFade;
 
-    Image image;
+    [Header("Set Dynamically: UILevel")]
+    private Image       image;
 
-    void Awake()
+    private void Awake()
     {
         S = this;
         image = imageFade.GetComponent<Image>();

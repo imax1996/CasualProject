@@ -1,4 +1,4 @@
 namespace UnityEngine {
     public enum ActionMove { None, Right, Left }
-    public enum InputKeys { Right, Left, Up, Down }
+    public enum InputKeys { None, Right, Left, Up, Down }
 }

@@ -7,15 +7,13 @@ using UnityEngine.UI;
 /// </summary>
 public class UIArrow : MonoBehaviour
 {
-    [Header("Set in Inspector: UIArrow")]
-    Color grey = Color.grey;
-    Color red = Color.red;
-    Color green = Color.green;
-    float animSpeed = 2;
+    private Color grey = Color.grey;
+    private Color red = Color.red;
+    private Color green = Color.green;
+    private float animSpeed = 2;
+    private Image image;
 
-    Image image;
-
-    void Awake()
+    private void Awake()
     {
         image = GetComponent<Image>();
     }

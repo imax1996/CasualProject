@@ -2,8 +2,11 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UIAnim : MonoBehaviour {
-    public static UIAnim S;
+/// <summary>
+/// Класс, определяющий UI для меню.
+/// </summary>
+public class UIMenu : MonoBehaviour {
+    public static UIMenu S;
 
     [Header("Set in Inspector: UIMenu")]
     public GameObject   canvasProgress;
@@ -11,25 +14,37 @@ public class UIAnim : MonoBehaviour {
     public Button       buttonStart;
     public Button       buttonExit;
 
-    void Awake() {
+    private void Awake()
+    {
         S = this;
     }
 
-    public void StartGame() {
-        ButtonIsInteract(false);
-        StartCoroutine(StartButton());
+    public void StartGame()
+    {
+        InteractableButtons(false);
+        StartCoroutine(NewLevel());
     }
 
-    public void ExitGame() {
+    public void ExitGame()
+    {
         Application.Quit();
     }
 
-    void ButtonIsInteract(bool isEnabled) {
+    /// <summary>
+    /// Управляет интерактивностью кнопок.
+    /// </summary>
+    /// <param name="isEnabled">True - включает кнопки.</param>
+    void InteractableButtons(bool isEnabled)
+    {
         buttonStart.interactable = isEnabled;
         buttonExit.interactable = isEnabled;
     }
 
-    IEnumerator StartButton() {
+    /// <summary>
+    /// Начинает новую игру.
+    /// </summary>
+    IEnumerator NewLevel()
+    {
         StartCoroutine(UILevel.S.NextLevelFirstAnim());
         yield return new WaitForSeconds(1);
         canvasMenu.SetActive(false);
@@ -39,7 +54,11 @@ public class UIAnim : MonoBehaviour {
         yield return null;
     }
 
-    public IEnumerator NextLevel() {
+    /// <summary>
+    /// Начинает новый уровень.
+    /// </summary>
+    public IEnumerator NextLevel()
+    {
         StartCoroutine(UILevel.S.NextLevelFirstAnim());
         yield return new WaitForSeconds(1);
         Game.S.StartNextLevel();
@@ -47,14 +66,19 @@ public class UIAnim : MonoBehaviour {
         yield return null;
     }
 
-    public void GameOver() {
-        StartCoroutine(IGameOver());
+    public void GameOver()
+    {
+        StartCoroutine(OverGame());
     }
 
-    IEnumerator IGameOver() {
+    /// <summary>
+    /// Заканчивает игру.
+    /// </summary>
+    IEnumerator OverGame()
+    {
         yield return new WaitForSeconds(1);
         canvasProgress.SetActive(false);
-        ButtonIsInteract(true);
+        InteractableButtons(true);
         canvasMenu.SetActive(true);
         yield return null;
     }

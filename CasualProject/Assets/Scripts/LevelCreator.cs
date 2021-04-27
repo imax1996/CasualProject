@@ -21,13 +21,15 @@ public class LevelCreator : MonoBehaviour
     /// <param name="maxKeys">Максимально возможное число ввода.</param>
     /// <param name="playerSpeed">Скорость игрока.</param>
     /// <returns></returns>
-    public Level CreateLevel(int countOfObstacle, float timeInputZone, int maxKeys, float playerSpeed) {
+    public Level CreateLevel(int countOfObstacle, float timeInputZone, int maxKeys, float playerSpeed)
+    {
         Level level = new Level();
         GameObject levelgo = new GameObject("Level");
 
         Vector3 posForObstacle = new Vector3(0, 0, timeUntilFirstZone * playerSpeed);
 
-        for (int i = 0; i < countOfObstacle; i++) {
+        for (int i = 0; i < countOfObstacle; i++)
+        {
             Obstacle obstacle = ChooseObstacle(posForObstacle.x);
             obstacle.ChangeObstacle(timeInputZone, Random.Range(2, maxKeys), password, playerSpeed);
 
@@ -48,14 +50,18 @@ public class LevelCreator : MonoBehaviour
     /// </summary>
     /// <param name="posX">Позиция игрока.</param>
     /// <returns></returns>
-    private Obstacle ChooseObstacle(float posX) {
-        if (Mathf.Approximately(posX, 0)) {
+    private Obstacle ChooseObstacle(float posX)
+    {
+        if (Mathf.Approximately(posX, 0))
+        {
             return playerInside[Random.Range(0, playerInside.Length)];
         }
-        if (Mathf.Approximately(posX, -3)) {
+        if (Mathf.Approximately(posX, -3))
+        {
             return playerLeft[Random.Range(0, playerLeft.Length)];
         }
-        if (Mathf.Approximately(posX, 3)) {
+        if (Mathf.Approximately(posX, 3))
+        {
             return playerRight[Random.Range(0, playerRight.Length)];
         }
 

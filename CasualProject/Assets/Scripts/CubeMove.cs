@@ -9,19 +9,17 @@ public class CubeMove : MonoBehaviour
     public float speed = 10;
     public float pointToBackZ = 100;
 
-    [Header("Set Dynamically: CubeMove")]
-    public bool nextLevel;
+    [HideInInspector] public bool   nextLevel;
+    private Rigidbody               rb;
+    private float                   offsetX;
+    private float                   offset;
 
-    Rigidbody   rb;
-    float       offsetX;
-    float       offset;
-
-    void Awake()
+    private void Awake()
     {
         rb = GetComponent<Rigidbody>();
     }
 
-    void FixedUpdate()
+    private void FixedUpdate()
     {
         rb.velocity = Vector3.forward * speed;
 
@@ -42,31 +40,29 @@ public class CubeMove : MonoBehaviour
         }
     }
 
-    void LateUpdate()
+    private void LateUpdate()
     {
         if (transform.position.z >= pointToBackZ && nextLevel)
         {
-            //выигрыш
             nextLevel = false;
-            StartCoroutine(UIAnim.S.NextLevel());
+            StartCoroutine(UIMenu.S.NextLevel());
         }
     }
 
     /// <summary>
-    /// Выполнить при столкновении с препятствием.
+    /// Выполнить при столкновении с препятствием (gameover).
     /// </summary>
     /// <param name="collision"></param>
-    void OnCollisionEnter(Collision collision) {
-        //game over
+    private void OnCollisionEnter(Collision collision) {
         gameObject.SetActive(false);
-        UIAnim.S.GameOver();
+        UIMenu.S.GameOver();
     }
 
     /// <summary>
     /// Выполнить при входе в зону ввода.
     /// </summary>
     /// <param name="other"></param>
-    void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         InputPassword.S.enabled = true;
         InputPassword.S.GetPassword(other.GetComponent<Zone>());
@@ -77,7 +73,7 @@ public class CubeMove : MonoBehaviour
     /// Выполнить при выходе из зоны ввода.
     /// </summary>
     /// <param name="other"></param>
-    void OnTriggerExit(Collider other)
+    private void OnTriggerExit(Collider other)
     {
         switch (InputPassword.S.Move())
         {

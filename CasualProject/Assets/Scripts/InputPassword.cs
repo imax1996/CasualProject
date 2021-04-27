@@ -7,17 +7,17 @@ public class InputPassword : MonoBehaviour
 {
     public static InputPassword S;
 
-    int         index;
-    ActionMove  move;
-    Zone        zone;
-    Vector2     downPos;
+    private int         index;
+    private ActionMove  move;
+    private Zone        zone;
+    private Vector2     downPos;
 
-    void Awake()
+    private void Awake()
     {
         S = this;
     }
 
-    void Update()
+    private void Update()
     {
         Vector2 mousePos = Camera.main.ScreenToViewportPoint(Input.mousePosition);
 
@@ -38,17 +38,17 @@ public class InputPassword : MonoBehaviour
     /// <returns></returns>
     private InputKeys TranslateToInputKeys(Vector3 offset)
     {
-        //if(Mathf.Abs(offset.x) == Mathf.Abs(offset.y))
-        //{
-        //    return InputKeys.None;
-        //}
+        if(Mathf.Abs(offset.x) == Mathf.Abs(offset.y))
+        {
+            return InputKeys.None;
+        }
         if (Mathf.Abs(offset.x) > Mathf.Abs(offset.y))
         {
             return (offset.x > 0) ? InputKeys.Right : InputKeys.Left;
         }
         else
         {
-            return (offset.y > 0) ? InputKeys.Right : InputKeys.Left;
+            return (offset.y > 0) ? InputKeys.Up : InputKeys.Down;
         }
     }
 

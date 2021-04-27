@@ -8,8 +8,9 @@ public class Game : MonoBehaviour
     public static Game S;
 
     [Header("Set in Inspector: Game")]
-    [HideInInspector] public int    level;
     public GameObject               playerCube;
+
+    [HideInInspector] public int    level;
     private LevelManager            levelManager;
 
     private void Awake()

@@ -5,6 +5,7 @@ using UnityEngine;
 /// </summary>
 public class MoveCamera : MonoBehaviour
 {
+    [Header("Set in Inspector: MoveCamera")]
     public GameObject player;
 
     void Update()

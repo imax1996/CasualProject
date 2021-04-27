@@ -10,13 +10,13 @@ public class UIPassword : MonoBehaviour
 
     [Header("Set in Inspector: UIPassword")]
     public GameObject password;
-    [SerializeField] GameObject arrowPrefab;
+    [SerializeField] private GameObject arrowPrefab;
 
     [Header("Set Dynamically: UIPassword")]
     public List<GameObject> arrows = new List<GameObject>();
-    int countOfmaxKey;
+    private int countOfmaxKey;
 
-    void Awake()
+    private void Awake()
     {
         S = this;
     }
@@ -27,7 +27,8 @@ public class UIPassword : MonoBehaviour
     /// <param name="inputKeys"></param>
     public void ShowKey(InputKeys[] inputKeys)
     {
-        if (inputKeys.Length > countOfmaxKey) {
+        if (inputKeys.Length > countOfmaxKey)
+        {
             for (int i = 0; i < inputKeys.Length - countOfmaxKey; i++)
             {
                 arrows.Add(Instantiate(arrowPrefab, password.transform) as GameObject);

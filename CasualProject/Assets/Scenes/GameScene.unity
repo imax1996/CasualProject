@@ -394,36 +394,6 @@ Transform:
   m_Father: {fileID: 317975763}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &183440867
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 183440868}
-  m_Layer: 0
-  m_Name: Controller
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &183440868
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 183440867}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &191643258
 GameObject:
   m_ObjectHideFlags: 0
@@ -574,7 +544,7 @@ Transform:
   - {fileID: 1902414742}
   - {fileID: 129309625131797445}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &266959424
 MonoBehaviour:
@@ -1374,7 +1344,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &784803783
 MonoBehaviour:
@@ -1402,17 +1372,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInside:
-  - {fileID: -8060058619342341172, guid: 792602bac51dd21469ccc1548e5be54f, type: 3}
-  - {fileID: -8060058619342341172, guid: 508ac02d80732734c93f31709af156f9, type: 3}
+  - {fileID: -8060058619342341172, guid: 80580637874953f4381997e35f15d161, type: 3}
+  - {fileID: 2709212058714276782, guid: 5a0afb9afc5c93e46bb762fe74964c82, type: 3}
   - {fileID: 2709212058714276782, guid: 6ef6169f806148a4594ee9029aca0200, type: 3}
-  - {fileID: 2709212058714276782, guid: 853807e6d458e3046bcb9f084865bf61, type: 3}
-  playerLeft:
-  - {fileID: 2709212058714276782, guid: 853807e6d458e3046bcb9f084865bf61, type: 3}
-  playerRight:
   - {fileID: -8060058619342341172, guid: 508ac02d80732734c93f31709af156f9, type: 3}
+  playerLeft:
+  - {fileID: -8060058619342341172, guid: d55247d45fa90df459a96b9a2e78dba4, type: 3}
+  playerRight:
+  - {fileID: -8060058619342341172, guid: 45a85c575eea38240838cf2a6d1422b4, type: 3}
   timeUntilFirstZone: 3
   timeAfterLastZone: 1
-  password: 01000000020000000300000000000000
+  password: 01000000020000000300000004000000
 --- !u!114 &784803785
 MonoBehaviour:
   m_ObjectHideFlags: 0

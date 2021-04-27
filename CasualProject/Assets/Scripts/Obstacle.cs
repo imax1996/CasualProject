@@ -5,11 +5,12 @@ using UnityEngine;
 /// </summary>
 public class Obstacle : MonoBehaviour
 {
+    [Header("Set in Inspector: Obstacle")]
     public GameObject   obstacle;
     public GameObject   inputZone;
     public GameObject   cubes;
     public GameObject   lengthObstacle;
-    public float        playerPosXAfterObstacle;
+    [HideInInspector] public float        playerPosXAfterObstacle;
 
     /// <summary>
     /// »змен€ет шаблон преп€тстви€ под параметры уровн€.
@@ -22,6 +23,19 @@ public class Obstacle : MonoBehaviour
     {
         Zone zone = inputZone.GetComponent<Zone>();
         zone.CreateKey(keys, password);
+
+        switch (zone.rightMove)
+        {
+            case ActionMove.None:
+                playerPosXAfterObstacle = 0;
+                break;
+            case ActionMove.Right:
+                playerPosXAfterObstacle = 3;
+                break;
+            case ActionMove.Left:
+                playerPosXAfterObstacle = -3;
+                break;
+        }
 
         inputZone.transform.localScale = new Vector3(inputZone.transform.localScale.x, inputZone.transform.localScale.y, keys * timeInputZone * playerSpeed);
         inputZone.transform.localPosition = new Vector3(0,0, inputZone.transform.localScale.z/2f);

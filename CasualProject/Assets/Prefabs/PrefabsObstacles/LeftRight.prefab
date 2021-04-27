@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4372777227621561382}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 32.5}
+  m_LocalPosition: {x: 0, y: 0, z: 38}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6764671034093223591}
@@ -54,7 +54,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6764671032517806312}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 30}
+  m_LocalPosition: {x: 0, y: 0, z: 35.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6764671032647267992}
@@ -167,7 +167,7 @@ GameObject:
   - component: {fileID: 6764671034093223591}
   - component: {fileID: -8060058619342341172}
   m_Layer: 0
-  m_Name: LeftArrow
+  m_Name: LeftRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -206,7 +206,7 @@ MonoBehaviour:
   inputZone: {fileID: 7774848072022917877}
   cubes: {fileID: 6764671032517806312}
   lengthObstacle: {fileID: 4372777227621561382}
-  playerPosXAfterObstacle: -3
+  playerPosXAfterObstacle: 3
 --- !u!1 &7774848072022917877
 GameObject:
   m_ObjectHideFlags: 0
@@ -233,8 +233,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7774848072022917877}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 10}
-  m_LocalScale: {x: 3, y: 10, z: 20}
+  m_LocalPosition: {x: 0, y: 0, z: 12.749999}
+  m_LocalScale: {x: 3, y: 10, z: 25.499998}
   m_Children: []
   m_Father: {fileID: 6764671034093223591}
   m_RootOrder: 0
@@ -264,6 +264,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8afe3feb4fe5fd04fb42a6eb50a9f205, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rightMove: 2
+  rightMoves: 01000000
+  wrongMoves: 00000000
+  rightMove: 1
   wrongMove: 0
-  keys: 0100000001000000
+  keys: 010000000300000003000000
