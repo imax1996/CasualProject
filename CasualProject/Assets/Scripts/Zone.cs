@@ -1,7 +1,7 @@
 using UnityEngine;
 
 /// <summary>
-/// Класс, определяющий зону ввода пароля.
+/// РљР»Р°СЃСЃ, РѕРїСЂРµРґРµР»СЏСЋС‰РёР№ Р·РѕРЅСѓ РІРІРѕРґР° РїР°СЂРѕР»СЏ.
 /// </summary>
 public class Zone : MonoBehaviour
 {
@@ -15,10 +15,10 @@ public class Zone : MonoBehaviour
     public InputKeys[] keys;
 
     /// <summary>
-    /// Создаёт пароль.
+    /// РЎРѕР·РґР°С‘С‚ РїР°СЂРѕР»СЊ.
     /// </summary>
-    /// <param name="countOfKeys">Кол-во симвлолов ввода.</param>
-    /// <param name="keysSet">Возможные символы ввода.</param>
+    /// <param name="countOfKeys">РљРѕР»-РІРѕ СЃРёРјРІР»РѕР»РѕРІ РІРІРѕРґР°.</param>
+    /// <param name="keysSet">Р’РѕР·РјРѕР¶РЅС‹Рµ СЃРёРјРІРѕР»С‹ РІРІРѕРґР°.</param>
     public void CreateKey(int countOfKeys, InputKeys[] keysSet)
     {
         keys = new InputKeys[countOfKeys];

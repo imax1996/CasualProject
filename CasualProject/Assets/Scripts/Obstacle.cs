@@ -1,7 +1,7 @@
 using UnityEngine;
 
 /// <summary>
-/// Класс, определяющий препятствие.
+/// В Р»Р°СЃСЃ, РѕРїСЂРµРґРµР»В¤СЋС‰РёР№ РїСЂРµРїВ¤С‚СЃС‚РІРёРµ.
 /// </summary>
 public class Obstacle : MonoBehaviour
 {
@@ -13,12 +13,12 @@ public class Obstacle : MonoBehaviour
     [HideInInspector] public float        playerPosXAfterObstacle;
 
     /// <summary>
-    /// Изменяет шаблон препятствия под параметры уровня.
+    /// В»Р·РјРµРЅВ¤РµС‚ С€Р°Р±Р»РѕРЅ РїСЂРµРїВ¤С‚СЃС‚РІРёВ¤ РїРѕРґ РїР°СЂР°РјРµС‚СЂС‹ СѓСЂРѕРІРЅВ¤.
     /// </summary>
-    /// <param name="timeInputZone">Время на ввод одного символа.</param>
-    /// <param name="keys">Кол-во симвлолов ввода.</param>
-    /// <param name="password">Пароль для ввода.</param>
-    /// <param name="playerSpeed">Скорость игрока.</param>
+    /// <param name="timeInputZone">В¬СЂРµРјВ¤ РЅР° РІРІРѕРґ РѕРґРЅРѕРіРѕ СЃРёРјРІРѕР»Р°.</param>
+    /// <param name="keys">В РѕР»-РІРѕ СЃРёРјРІР»РѕР»РѕРІ РІРІРѕРґР°.</param>
+    /// <param name="password">С•Р°СЂРѕР»СЊ РґР»В¤ РІРІРѕРґР°.</param>
+    /// <param name="playerSpeed">вЂ”РєРѕСЂРѕСЃС‚СЊ РёРіСЂРѕРєР°.</param>
     public void ChangeObstacle(float timeInputZone, int keys, InputKeys[] password, float playerSpeed)
     {
         Zone zone = inputZone.GetComponent<Zone>();

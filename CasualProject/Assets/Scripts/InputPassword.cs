@@ -1,7 +1,7 @@
 using UnityEngine;
 
 /// <summary>
-/// Класс, определяющий систему ввода.
+/// В Р»Р°СЃСЃ, РѕРїСЂРµРґРµР»В¤СЋС‰РёР№ СЃРёСЃС‚РµРјСѓ РІРІРѕРґР°.
 /// </summary>
 public class InputPassword : MonoBehaviour
 {
@@ -32,9 +32,9 @@ public class InputPassword : MonoBehaviour
     }
 
     /// <summary>
-    /// Перевод ввода в Inputkeys.
+    /// С•РµСЂРµРІРѕРґ РІРІРѕРґР° РІ Inputkeys.
     /// </summary>
-    /// <param name="offset">Введённый знак.</param>
+    /// <param name="offset">В¬РІРµРґР„РЅРЅС‹Р№ Р·РЅР°Рє.</param>
     /// <returns></returns>
     private InputKeys TranslateToInputKeys(Vector3 offset)
     {
@@ -53,9 +53,9 @@ public class InputPassword : MonoBehaviour
     }
 
     /// <summary>
-    /// Получает пароль из зоны.
+    /// С•РѕР»СѓС‡Р°РµС‚ РїР°СЂРѕР»СЊ РёР· Р·РѕРЅС‹.
     /// </summary>
-    /// <param name="tempZone">Зона с паролем.</param>
+    /// <param name="tempZone">В«РѕРЅР° СЃ РїР°СЂРѕР»РµРј.</param>
     public void GetPassword(Zone tempZone)
     {
         index = 0;
@@ -64,7 +64,7 @@ public class InputPassword : MonoBehaviour
     }
 
     /// <summary>
-    /// Отключает ввод.
+    /// СњС‚РєР»СЋС‡Р°РµС‚ РІРІРѕРґ.
     /// </summary>
     /// <returns></returns>
     public ActionMove Move()
@@ -75,14 +75,14 @@ public class InputPassword : MonoBehaviour
     }
 
     /// <summary>
-    /// Проверка введённого и текущего знака.
+    /// С•СЂРѕРІРµСЂРєР° РІРІРµРґР„РЅРЅРѕРіРѕ Рё С‚РµРєСѓС‰РµРіРѕ Р·РЅР°РєР°.
     /// </summary>
     /// <param name="inputKeys"></param>
     private void CheckInput(InputKeys inputKeys)
     {
         if (inputKeys == zone.keys[index])
         {
-            //если правильный ввод
+            //РµСЃР»Рё РїСЂР°РІРёР»СЊРЅС‹Р№ РІРІРѕРґ
             UIPassword.S.arrows[index].GetComponent<UIArrow>().ChangeColorToGreen();
             index++;
 
@@ -94,7 +94,7 @@ public class InputPassword : MonoBehaviour
         }
         else
         {
-            //если не правильный ввод
+            //РµСЃР»Рё РЅРµ РїСЂР°РІРёР»СЊРЅС‹Р№ РІРІРѕРґ
             for (int i = 0; i < zone.keys.Length; i++)
             {
                 UIPassword.S.arrows[i].GetComponent<UIArrow>().ChangeColorToRed();

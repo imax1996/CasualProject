@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// Класс, определяющий UI для пароля.
+/// В Р»Р°СЃСЃ, РѕРїСЂРµРґРµР»В¤СЋС‰РёР№ UI РґР»В¤ РїР°СЂРѕР»В¤.
 /// </summary>
 public class UIPassword : MonoBehaviour
 {
@@ -22,7 +22,7 @@ public class UIPassword : MonoBehaviour
     }
 
     /// <summary>
-    /// Показывает пароль.
+    /// С•РѕРєР°Р·С‹РІР°РµС‚ РїР°СЂРѕР»СЊ.
     /// </summary>
     /// <param name="inputKeys"></param>
     public void ShowKey(InputKeys[] inputKeys)
@@ -58,7 +58,7 @@ public class UIPassword : MonoBehaviour
     }
 
     /// <summary>
-    /// Отключает пароль.
+    /// СњС‚РєР»СЋС‡Р°РµС‚ РїР°СЂРѕР»СЊ.
     /// </summary>
     public void DisableArrow()
     {

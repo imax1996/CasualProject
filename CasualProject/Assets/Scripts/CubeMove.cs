@@ -1,7 +1,7 @@
 using UnityEngine;
 
 /// <summary>
-/// Класс, определяющий движение куба (игрока).
+/// РљР»Р°СЃСЃ, РѕРїСЂРµРґРµР»СЏСЋС‰РёР№ РґРІРёР¶РµРЅРёРµ РєСѓР±Р° (РёРіСЂРѕРєР°).
 /// </summary>
 public class CubeMove : MonoBehaviour
 {
@@ -50,7 +50,7 @@ public class CubeMove : MonoBehaviour
     }
 
     /// <summary>
-    /// Выполнить при столкновении с препятствием (gameover).
+    /// Р’С‹РїРѕР»РЅРёС‚СЊ РїСЂРё СЃС‚РѕР»РєРЅРѕРІРµРЅРёРё СЃ РїСЂРµРїСЏС‚СЃС‚РІРёРµРј (gameover).
     /// </summary>
     /// <param name="collision"></param>
     private void OnCollisionEnter(Collision collision) {
@@ -59,7 +59,7 @@ public class CubeMove : MonoBehaviour
     }
 
     /// <summary>
-    /// Выполнить при входе в зону ввода.
+    /// Р’С‹РїРѕР»РЅРёС‚СЊ РїСЂРё РІС…РѕРґРµ РІ Р·РѕРЅСѓ РІРІРѕРґР°.
     /// </summary>
     /// <param name="other"></param>
     private void OnTriggerEnter(Collider other)
@@ -70,7 +70,7 @@ public class CubeMove : MonoBehaviour
     }
 
     /// <summary>
-    /// Выполнить при выходе из зоны ввода.
+    /// Р’С‹РїРѕР»РЅРёС‚СЊ РїСЂРё РІС‹С…РѕРґРµ РёР· Р·РѕРЅС‹ РІРІРѕРґР°.
     /// </summary>
     /// <param name="other"></param>
     private void OnTriggerExit(Collider other)

@@ -1,7 +1,7 @@
 using UnityEngine;
 
 /// <summary>
-/// Класс, определяющий параметры игры.
+/// РљР»Р°СЃСЃ, РѕРїСЂРµРґРµР»СЏСЋС‰РёР№ РїР°СЂР°РјРµС‚СЂС‹ РёРіСЂС‹.
 /// </summary>
 public class Game : MonoBehaviour
 {
@@ -20,7 +20,7 @@ public class Game : MonoBehaviour
     }
 
     /// <summary>
-    /// Начинает новый уровень.
+    /// РќР°С‡РёРЅР°РµС‚ РЅРѕРІС‹Р№ СѓСЂРѕРІРµРЅСЊ.
     /// </summary>
     public void StartNewLevel()
     {
@@ -30,7 +30,7 @@ public class Game : MonoBehaviour
     }
 
     /// <summary>
-    /// Начинает следующий уровень.
+    /// РќР°С‡РёРЅР°РµС‚ СЃР»РµРґСѓСЋС‰РёР№ СѓСЂРѕРІРµРЅСЊ.
     /// </summary>
     public void StartNextLevel()
     {
@@ -40,7 +40,7 @@ public class Game : MonoBehaviour
     }
 
     /// <summary>
-    /// Создать уровень.
+    /// РЎРѕР·РґР°С‚СЊ СѓСЂРѕРІРµРЅСЊ.
     /// </summary>
     private void CreateLevel() {
         levelManager.DeleteObstacles();
@@ -48,7 +48,7 @@ public class Game : MonoBehaviour
     }
 
     /// <summary>
-    /// Активирует игрока.
+    /// РђРєС‚РёРІРёСЂСѓРµС‚ РёРіСЂРѕРєР°.
     /// </summary>
     private void EnablePlayer()
     {

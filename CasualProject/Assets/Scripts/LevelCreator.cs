@@ -1,7 +1,7 @@
 using UnityEngine;
 
 /// <summary>
-/// Класс, создающий уровень.
+/// РљР»Р°СЃСЃ, СЃРѕР·РґР°СЋС‰РёР№ СѓСЂРѕРІРµРЅСЊ.
 /// </summary>
 public class LevelCreator : MonoBehaviour
 {
@@ -14,12 +14,12 @@ public class LevelCreator : MonoBehaviour
     [SerializeField] private InputKeys[] password;
 
     /// <summary>
-    /// Создаёт препятствия на уровне.
+    /// РЎРѕР·РґР°С‘С‚ РїСЂРµРїСЏС‚СЃС‚РІРёСЏ РЅР° СѓСЂРѕРІРЅРµ.
     /// </summary>
-    /// <param name="countOfObstacle">Кол-во преград на уровне.</param>
-    /// <param name="timeInputZone">Время на ввод одного символа.</param>
-    /// <param name="maxKeys">Максимально возможное число ввода.</param>
-    /// <param name="playerSpeed">Скорость игрока.</param>
+    /// <param name="countOfObstacle">РљРѕР»-РІРѕ РїСЂРµРіСЂР°Рґ РЅР° СѓСЂРѕРІРЅРµ.</param>
+    /// <param name="timeInputZone">Р’СЂРµРјСЏ РЅР° РІРІРѕРґ РѕРґРЅРѕРіРѕ СЃРёРјРІРѕР»Р°.</param>
+    /// <param name="maxKeys">РњР°РєСЃРёРјР°Р»СЊРЅРѕ РІРѕР·РјРѕР¶РЅРѕРµ С‡РёСЃР»Рѕ РІРІРѕРґР°.</param>
+    /// <param name="playerSpeed">РЎРєРѕСЂРѕСЃС‚СЊ РёРіСЂРѕРєР°.</param>
     /// <returns></returns>
     public Level CreateLevel(int countOfObstacle, float timeInputZone, int maxKeys, float playerSpeed)
     {
@@ -46,9 +46,9 @@ public class LevelCreator : MonoBehaviour
     }
 
     /// <summary>
-    /// Выбор препятствия исходя их позиции игрока.
+    /// Р’С‹Р±РѕСЂ РїСЂРµРїСЏС‚СЃС‚РІРёСЏ РёСЃС…РѕРґСЏ РёС… РїРѕР·РёС†РёРё РёРіСЂРѕРєР°.
     /// </summary>
-    /// <param name="posX">Позиция игрока.</param>
+    /// <param name="posX">РџРѕР·РёС†РёСЏ РёРіСЂРѕРєР°.</param>
     /// <returns></returns>
     private Obstacle ChooseObstacle(float posX)
     {

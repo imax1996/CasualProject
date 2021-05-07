@@ -1,7 +1,7 @@
 using UnityEngine;
 
 /// <summary>
-/// Класс, определяющий параметры уровня.
+/// В Р»Р°СЃСЃ, РѕРїСЂРµРґРµР»В¤СЋС‰РёР№ РїР°СЂР°РјРµС‚СЂС‹ СѓСЂРѕРІРЅВ¤.
 /// </summary>
 public class LevelManager : MonoBehaviour
 {
@@ -20,7 +20,7 @@ public class LevelManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Обнуляет сложность для новой игры.
+    /// СњР±РЅСѓР»В¤РµС‚ СЃР»РѕР¶РЅРѕСЃС‚СЊ РґР»В¤ РЅРѕРІРѕР№ РёРіСЂС‹.
     /// </summary>
     public void ResetParameters()
     {
@@ -31,7 +31,7 @@ public class LevelManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Увеличивает сложность.
+    /// вЂќРІРµР»РёС‡РёРІР°РµС‚ СЃР»РѕР¶РЅРѕСЃС‚СЊ.
     /// </summary>
     public void IncreaseDifficult()
     {
@@ -42,7 +42,7 @@ public class LevelManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Удаляет старые препятствия.
+    /// вЂќРґР°Р»В¤РµС‚ СЃС‚Р°СЂС‹Рµ РїСЂРµРїВ¤С‚СЃС‚РІРёВ¤.
     /// </summary>
     public void DeleteObstacles()
     {
@@ -53,7 +53,7 @@ public class LevelManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Создаёт новые препятствия.
+    /// вЂ”РѕР·РґР°Р„С‚ РЅРѕРІС‹Рµ РїСЂРµРїВ¤С‚СЃС‚РІРёВ¤.
     /// </summary>
     public void CreateObstacles()
     {

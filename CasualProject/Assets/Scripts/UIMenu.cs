@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 /// <summary>
-/// Класс, определяющий UI для меню.
+/// РљР»Р°СЃСЃ, РѕРїСЂРµРґРµР»СЏСЋС‰РёР№ UI РґР»СЏ РјРµРЅСЋ.
 /// </summary>
 public class UIMenu : MonoBehaviour {
     public static UIMenu S;
@@ -31,9 +31,9 @@ public class UIMenu : MonoBehaviour {
     }
 
     /// <summary>
-    /// Управляет интерактивностью кнопок.
+    /// РЈРїСЂР°РІР»СЏРµС‚ РёРЅС‚РµСЂР°РєС‚РёРІРЅРѕСЃС‚СЊСЋ РєРЅРѕРїРѕРє.
     /// </summary>
-    /// <param name="isEnabled">True - включает кнопки.</param>
+    /// <param name="isEnabled">True - РІРєР»СЋС‡Р°РµС‚ РєРЅРѕРїРєРё.</param>
     void InteractableButtons(bool isEnabled)
     {
         buttonStart.interactable = isEnabled;
@@ -41,7 +41,7 @@ public class UIMenu : MonoBehaviour {
     }
 
     /// <summary>
-    /// Начинает новую игру.
+    /// РќР°С‡РёРЅР°РµС‚ РЅРѕРІСѓСЋ РёРіСЂСѓ.
     /// </summary>
     IEnumerator NewLevel()
     {
@@ -55,7 +55,7 @@ public class UIMenu : MonoBehaviour {
     }
 
     /// <summary>
-    /// Начинает новый уровень.
+    /// РќР°С‡РёРЅР°РµС‚ РЅРѕРІС‹Р№ СѓСЂРѕРІРµРЅСЊ.
     /// </summary>
     public IEnumerator NextLevel()
     {
@@ -72,7 +72,7 @@ public class UIMenu : MonoBehaviour {
     }
 
     /// <summary>
-    /// Заканчивает игру.
+    /// Р—Р°РєР°РЅС‡РёРІР°РµС‚ РёРіСЂСѓ.
     /// </summary>
     IEnumerator OverGame()
     {

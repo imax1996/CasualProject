@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 /// <summary>
-/// Класс, определяющий UI для стрелок.
+/// В Р»Р°СЃСЃ, РѕРїСЂРµРґРµР»В¤СЋС‰РёР№ UI РґР»В¤ СЃС‚СЂРµР»РѕРє.
 /// </summary>
 public class UIArrow : MonoBehaviour
 {
