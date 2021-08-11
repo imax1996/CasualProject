@@ -1,7 +1,7 @@
 using UnityEngine;
 
 /// <summary>
-///  ласс, определ¤ющий систему ввода.
+/// Класс, определяющий систему ввода.
 /// </summary>
 public class InputPassword : MonoBehaviour
 {
@@ -32,9 +32,9 @@ public class InputPassword : MonoBehaviour
     }
 
     /// <summary>
-    /// ѕеревод ввода в Inputkeys.
+    /// Перевод ввода в InputKeys.
     /// </summary>
-    /// <param name="offset">¬ведЄнный знак.</param>
+    /// <param name="offset">Введенный знак.</param>
     /// <returns></returns>
     private InputKeys TranslateToInputKeys(Vector3 offset)
     {
@@ -53,9 +53,9 @@ public class InputPassword : MonoBehaviour
     }
 
     /// <summary>
-    /// ѕолучает пароль из зоны.
+    /// Получает пароль из зоны.
     /// </summary>
-    /// <param name="tempZone">«она с паролем.</param>
+    /// <param name="tempZone">Зона с паролем.</param>
     public void GetPassword(Zone tempZone)
     {
         index = 0;
@@ -64,7 +64,7 @@ public class InputPassword : MonoBehaviour
     }
 
     /// <summary>
-    /// ќтключает ввод.
+    /// Отключает ввод.
     /// </summary>
     /// <returns></returns>
     public ActionMove Move()
@@ -75,7 +75,7 @@ public class InputPassword : MonoBehaviour
     }
 
     /// <summary>
-    /// ѕроверка введЄнного и текущего знака.
+    /// Проверка введённого и текущего знака.
     /// </summary>
     /// <param name="inputKeys"></param>
     private void CheckInput(InputKeys inputKeys)

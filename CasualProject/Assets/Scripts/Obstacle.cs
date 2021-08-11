@@ -1,7 +1,7 @@
 using UnityEngine;
 
 /// <summary>
-///  ласс, определ¤ющий преп¤тствие.
+/// Класс, определябщий препятствие.
 /// </summary>
 public class Obstacle : MonoBehaviour
 {
@@ -13,12 +13,12 @@ public class Obstacle : MonoBehaviour
     [HideInInspector] public float        playerPosXAfterObstacle;
 
     /// <summary>
-    /// »змен¤ет шаблон преп¤тстви¤ под параметры уровн¤.
+    /// Изменяет шаблон препятствий под параметры уровня.
     /// </summary>
-    /// <param name="timeInputZone">¬рем¤ на ввод одного символа.</param>
-    /// <param name="keys"> ол-во симвлолов ввода.</param>
-    /// <param name="password">ѕароль дл¤ ввода.</param>
-    /// <param name="playerSpeed">—корость игрока.</param>
+    /// <param name="timeInputZone">Время на ввод одного символа.</param>
+    /// <param name="keys">Кол-во симвлолов ввода.</param>
+    /// <param name="password">Пароль для ввода.</param>
+    /// <param name="playerSpeed">Скорость игрока.</param>
     public void ChangeObstacle(float timeInputZone, int keys, InputKeys[] password, float playerSpeed)
     {
         Zone zone = inputZone.GetComponent<Zone>();

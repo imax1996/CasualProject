@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 /// <summary>
-///  ласс, определ¤ющий UI дл¤ стрелок.
+/// Класс, определяющий UI для стрелок.
 /// </summary>
 public class UIArrow : MonoBehaviour
 {
@@ -21,7 +21,7 @@ public class UIArrow : MonoBehaviour
     public void ChangeColorToRed()
     {
         StopAllCoroutines();
-        StartCoroutine(ChangeColor(grey));
+        StartCoroutine(ChangeColor(red));
     }
 
     public void ChangeColorToGreen()
@@ -32,9 +32,10 @@ public class UIArrow : MonoBehaviour
 
     IEnumerator ChangeColor(Color setColor)
     {
-        if (setColor == grey)
+        if (setColor == red)
         {
             image.color = red;
+            setColor = grey;
         }
 
         float percent = 0;

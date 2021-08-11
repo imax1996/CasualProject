@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 /// <summary>
-///  ласс, определ¤ющий UI дл¤ уровн¤.
+/// Класс, определяющий UI для уровня.
 /// </summary>
 public class UILevel : MonoBehaviour
 {
@@ -22,7 +22,7 @@ public class UILevel : MonoBehaviour
     }
 
     /// <summary>
-    /// јнимаци¤ фейда с увеличением.
+    /// Анимация фейда с увеличением.
     /// </summary>
     /// <returns></returns>
     public IEnumerator NextLevelFirstAnim()
@@ -38,7 +38,7 @@ public class UILevel : MonoBehaviour
     }
 
     /// <summary>
-    /// јнимаци¤ фейда с исчезновением.
+    /// Анимация фейда с исчезновением.
     /// </summary>
     /// <returns></returns>
     public IEnumerator NextLevelSecondAnim()

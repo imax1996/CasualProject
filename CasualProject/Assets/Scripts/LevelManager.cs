@@ -1,7 +1,7 @@
 using UnityEngine;
 
 /// <summary>
-///  ласс, определ¤ющий параметры уровн¤.
+/// Класс, определяющий параметры уровня.
 /// </summary>
 public class LevelManager : MonoBehaviour
 {
@@ -20,7 +20,7 @@ public class LevelManager : MonoBehaviour
     }
 
     /// <summary>
-    /// ќбнул¤ет сложность дл¤ новой игры.
+    /// Обнуляет сложность для новой игры.
     /// </summary>
     public void ResetParameters()
     {
@@ -31,7 +31,7 @@ public class LevelManager : MonoBehaviour
     }
 
     /// <summary>
-    /// ”величивает сложность.
+    /// Увеличивает сложность.
     /// </summary>
     public void IncreaseDifficult()
     {
@@ -42,7 +42,7 @@ public class LevelManager : MonoBehaviour
     }
 
     /// <summary>
-    /// ”дал¤ет старые преп¤тстви¤.
+    /// Удаляет старые препятствия.
     /// </summary>
     public void DeleteObstacles()
     {
@@ -53,7 +53,7 @@ public class LevelManager : MonoBehaviour
     }
 
     /// <summary>
-    /// —оздаЄт новые преп¤тстви¤.
+    /// Создаёт новые препятствия.
     /// </summary>
     public void CreateObstacles()
     {

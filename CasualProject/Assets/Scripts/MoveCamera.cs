@@ -1,7 +1,7 @@
 using UnityEngine;
 
 /// <summary>
-///  ласс, определ¤ющий движение камеры за игроком.
+/// Класс, определяющий движение камеры за игроком.
 /// </summary>
 public class MoveCamera : MonoBehaviour
 {

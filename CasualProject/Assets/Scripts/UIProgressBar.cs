@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 /// <summary>
-///  ласс, определ¤ющий UI дл¤ прогресс-бара.
+/// Класс, определяющий UI для прогресс-бара.
 /// </summary>
 public class UIProgressBar : MonoBehaviour
 {
