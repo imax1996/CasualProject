@@ -20,19 +20,7 @@ public class UIArrow : MonoBehaviour
         StopAllCoroutines();
         StartCoroutine(ChangeColor(color));
     }
-    /*
-    public void ChangeColorToRed()
-    {
-        StopAllCoroutines();
-        StartCoroutine(ChangeColor(Color.red));
-    }
 
-    public void ChangeColorToGreen()
-    {
-        StopAllCoroutines();
-        StartCoroutine(ChangeColor(Color.green));
-    }
-    */
     IEnumerator ChangeColor(Color setColor)
     {
         if (setColor == Color.red)
