@@ -83,7 +83,7 @@ public class InputPassword : MonoBehaviour
         if (inputKeys == zone.keys[index])
         {
             //если правильный ввод
-            UIPassword.S.arrows[index].GetComponent<UIArrow>().ChangeColorToGreen();
+            UIPassword.S.arrows[index].GetComponent<UIArrow>().ChangeColorToColor(Color.green);
             index++;
 
             if (index == zone.keys.Length)
@@ -97,7 +97,7 @@ public class InputPassword : MonoBehaviour
             //если не правильный ввод
             for (int i = 0; i < zone.keys.Length; i++)
             {
-                UIPassword.S.arrows[i].GetComponent<UIArrow>().ChangeColorToRed();
+                UIPassword.S.arrows[i].GetComponent<UIArrow>().ChangeColorToColor(Color.red);
             }
             index = 0;
         }

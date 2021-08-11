@@ -7,9 +7,6 @@ using UnityEngine.UI;
 /// </summary>
 public class UIArrow : MonoBehaviour
 {
-    private Color grey = Color.grey;
-    private Color red = Color.red;
-    private Color green = Color.green;
     private float animSpeed = 2;
     private Image image;
 
@@ -18,24 +15,30 @@ public class UIArrow : MonoBehaviour
         image = GetComponent<Image>();
     }
 
+    public void ChangeColorToColor(Color color)
+    {
+        StopAllCoroutines();
+        StartCoroutine(ChangeColor(color));
+    }
+    /*
     public void ChangeColorToRed()
     {
         StopAllCoroutines();
-        StartCoroutine(ChangeColor(red));
+        StartCoroutine(ChangeColor(Color.red));
     }
 
     public void ChangeColorToGreen()
     {
         StopAllCoroutines();
-        StartCoroutine(ChangeColor(green));
+        StartCoroutine(ChangeColor(Color.green));
     }
-
+    */
     IEnumerator ChangeColor(Color setColor)
     {
-        if (setColor == red)
+        if (setColor == Color.red)
         {
-            image.color = red;
-            setColor = grey;
+            image.color = Color.red;
+            setColor = Color.grey;
         }
 
         float percent = 0;
@@ -49,6 +52,6 @@ public class UIArrow : MonoBehaviour
 
     void OnDisable()
     {
-        image.color = grey;
+        image.color = Color.grey;
     }
 }
