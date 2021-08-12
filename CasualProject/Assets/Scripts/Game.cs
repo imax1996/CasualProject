@@ -22,19 +22,16 @@ public class Game : MonoBehaviour
     /// <summary>
     /// Начинает новый уровень.
     /// </summary>
-    public void StartNewLevel()
+    public void StartLevel(bool isNextLevel)
     {
-        levelManager.ResetParameters();
-        CreateLevel();
-        EnablePlayer();
-    }
-
-    /// <summary>
-    /// Начинает следующий уровень.
-    /// </summary>
-    public void StartNextLevel()
-    {
-        levelManager.IncreaseDifficult();
+        if (isNextLevel == false)
+        {
+            levelManager.ResetParameters();
+        }
+        else
+        {
+            levelManager.IncreaseDifficult();
+        }
         CreateLevel();
         EnablePlayer();
     }

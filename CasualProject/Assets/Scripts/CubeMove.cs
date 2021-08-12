@@ -45,7 +45,7 @@ public class CubeMove : MonoBehaviour
         if (transform.position.z >= pointToBackZ && nextLevel)
         {
             nextLevel = false;
-            StartCoroutine(UIMenu.S.NextLevel());
+            StartCoroutine(UIMenu.S.NewLevel(true));
         }
     }
 

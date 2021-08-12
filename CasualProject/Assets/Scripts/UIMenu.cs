@@ -22,7 +22,7 @@ public class UIMenu : MonoBehaviour {
     public void StartGame()
     {
         InteractableButtons(false);
-        StartCoroutine(NewLevel());
+        StartCoroutine(NewLevel(false));
     }
 
     public void ExitGame()
@@ -43,25 +43,17 @@ public class UIMenu : MonoBehaviour {
     /// <summary>
     /// Начинает новую игру.
     /// </summary>
-    IEnumerator NewLevel()
+    public IEnumerator NewLevel(bool isNextLevel)
     {
         StartCoroutine(UILevel.S.NextLevelFirstAnim());
         yield return new WaitForSeconds(1);
-        canvasMenu.SetActive(false);
-        Game.S.StartNewLevel();
-        canvasProgress.SetActive(true);
-        StartCoroutine(UILevel.S.NextLevelSecondAnim());
-        yield return null;
-    }
 
-    /// <summary>
-    /// Начинает новый уровень.
-    /// </summary>
-    public IEnumerator NextLevel()
-    {
-        StartCoroutine(UILevel.S.NextLevelFirstAnim());
-        yield return new WaitForSeconds(1);
-        Game.S.StartNextLevel();
+        if (isNextLevel == false)
+        {
+            canvasMenu.SetActive(false);
+            canvasProgress.SetActive(true);
+        }
+        Game.S.StartLevel(isNextLevel);
         StartCoroutine(UILevel.S.NextLevelSecondAnim());
         yield return null;
     }
