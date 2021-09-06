@@ -268,4 +268,4 @@ MonoBehaviour:
   wrongMoves: 00000000
   rightMove: 1
   wrongMove: 0
-  keys: 0200000004000000
+  keys: 0100000001000000
