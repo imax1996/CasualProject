@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
     private Rigidbody _rigidbody;
     public float Speed { get; private set; }
     private float _startSpeed = 1;
-    private float _changeSpeedPerLevel = 0.5f;
+    private float _changeSpeedPerLevel = 5f;
 
     private void Awake()
     {

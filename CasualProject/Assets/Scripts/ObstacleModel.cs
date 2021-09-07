@@ -19,7 +19,7 @@ public class ObstacleModel
     public Vector3 EndPoint { get => GetEndPoint(); private set => SetEndPoint(); }
     private Vector3 GetEndPoint()
     {
-        Vector3 point = new Vector3(StartPoint.x, StartPoint.y, StartPoint.z + Length);
+        Vector3 point = new Vector3((int)TriggerZone.ExitPosition * 3, StartPoint.y, StartPoint.z + Length);
 
         return point;
     }
