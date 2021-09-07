@@ -1,13 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameplayController : MonoBehaviour
 {
-    [SerializeField] private Player _player;
+    [SerializeField] private Player          _player;
     [SerializeField] private LevelController _levelController;
-    [SerializeField] private UIProgress _uiProgress;
-    [SerializeField] private GameObject _uiMenu;
+    [SerializeField] private UIProgress      _uiProgress;
+    [SerializeField] private GameObject      _uiMenu;
 
     private int _level;
 

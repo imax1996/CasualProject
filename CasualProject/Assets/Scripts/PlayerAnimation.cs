@@ -2,15 +2,17 @@ using UnityEngine;
 
 public class PlayerAnimation : MonoBehaviour
 {
+    [SerializeField] private float _startSpeed = 5;
+    [SerializeField] private float _changeSpeedPerLevel = 1f;
     [SerializeField] private float _smoothTime = 0.3f;
+
     private float _tempTargetPosotionX;
     private float _targetPositionX;
     private float _currentVelocity;
 
     private Rigidbody _rigidbody;
+
     public float Speed { get; private set; }
-    private float _startSpeed = 5;
-    private float _changeSpeedPerLevel = 1f;
 
     private void Awake()
     {
@@ -48,6 +50,6 @@ public class PlayerAnimation : MonoBehaviour
 
     private void Update()
     {
-        transform.position = new Vector3(Mathf.SmoothDamp(transform.position.x, _targetPositionX, ref _currentVelocity, _smoothTime / Speed), transform.position.y, transform.position.z);
+        transform.position = new Vector3(Mathf.SmoothDamp(transform.position.x, _targetPositionX, ref _currentVelocity, _smoothTime), transform.position.y, transform.position.z);
     }
 }
