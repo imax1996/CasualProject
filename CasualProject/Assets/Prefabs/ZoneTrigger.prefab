@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2507281712462984380}
   - component: {fileID: 2507281712462984381}
-  - component: {fileID: 2214313193998933555}
+  - component: {fileID: 1875445648611777390}
   m_Layer: 8
   m_Name: ZoneTrigger
   m_TagString: Untagged
@@ -45,7 +45,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &2214313193998933555
+--- !u!114 &1875445648611777390
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -54,6 +54,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 2507281712462984383}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71d2ccc3eb1f3af4b864d2ad4f27fb24, type: 3}
+  m_Script: {fileID: 11500000, guid: e4dbdb102f4f0574886058c43e15bae7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

@@ -1,4 +1,4 @@
 namespace UnityEngine
 {
-    public enum InputAction {Right, Up, Left, Down}
+    public enum InputAction {None, Right, Up, Left, Down}
 }

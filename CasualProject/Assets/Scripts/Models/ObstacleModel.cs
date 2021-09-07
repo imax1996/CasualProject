@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class ObstacleModel
 {
-    public TriggerZone TriggerZone { get; private set; }
-    public Wall Wall { get; private set; }
+    public TriggerZoneModel TriggerZone { get; private set; }
+    public WallModel Wall { get; private set; }
     public Vector3 StartPoint { get; private set; }
     public float Length { get => TriggerZone.Length + 1; }
 
-    public ObstacleModel(TriggerZone _triggerZone, Wall _wall, Vector3 _startPoint)
+    public ObstacleModel(TriggerZoneModel _triggerZone, WallModel _wall, Vector3 _startPoint)
     {
         TriggerZone = _triggerZone;
         Wall = _wall;

@@ -16,10 +16,13 @@ public class LevelView : MonoBehaviour
             GameObject obstacleGO = new GameObject("Obstacle");
             obstacleGO.transform.SetParent(level.transform);
 
-            GameObject triggerZone = Instantiate(_triggerZonePrefab, obstacleGO.transform);
-            BoxCollider boxCollider = triggerZone.GetComponent<BoxCollider>();
+            GameObject triggerZoneGO = Instantiate(_triggerZonePrefab, obstacleGO.transform);
+            BoxCollider boxCollider = triggerZoneGO.GetComponent<BoxCollider>();
             boxCollider.center = obstacle.TriggerZone.Center;
             boxCollider.size = obstacle.TriggerZone.Size;
+            TriggerZone triggerZone = triggerZoneGO.GetComponent<TriggerZone>();
+            triggerZone.InputActions = obstacle.TriggerZone.InputAction;
+            triggerZone.ExitPosition = obstacle.TriggerZone.ExitPosition;
 
             GameObject wall = Instantiate(_wallPrefab, obstacleGO.transform);
             wall.transform.localPosition = obstacle.Wall.Position;
