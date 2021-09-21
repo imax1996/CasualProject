@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,13 +5,14 @@ public class Checker : MonoBehaviour
 {
     public event System.Action RightInputEvent;
 
-    public InputZoneData.Direction[] NeedInputs;
-    private List<InputZoneData.Direction> Inputs;
+    [SerializeField] private Arrows _arrows;
 
+    private List<InputZoneData.Direction> Inputs;
     private PlayerInput _playerInput;
     private PlayerCollision _playerCollision;
     private CheckNextLevel _nextLevel;
-    public Arrows _arrows;
+
+    public InputZoneData.Direction[] NeedInputs { get; private set; }
 
     public void Init(PlayerInput playerInput, PlayerCollision playerCollision, CheckNextLevel checkNextLevel)
     {

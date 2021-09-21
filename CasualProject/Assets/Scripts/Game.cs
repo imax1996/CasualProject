@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Game : MonoBehaviour
@@ -13,17 +11,20 @@ public class Game : MonoBehaviour
         _level = _gameData.LevelData.GetComponent<Level>();
     }
 
-    private void Start()
-    {
-        _gameData.Menu.SetActive(true);
-    }
-
     public void NewGame()
     {
+        _gameData.Fade.AnimEndEvent += NewGameAfterAnim;
+        _gameData.Fade.FadeOut();
+    }
+
+    private void NewGameAfterAnim()
+    {
+        _gameData.Fade.AnimEndEvent -= NewGameAfterAnim;
+        _gameData.Menu.SetActive(false);
         _level.StartLevel(1);
         _gameData.LevelData.CheckNextLevel.NextLevelEvent += OnNextLevel;
         _gameData.LevelData.Player.GetComponent<PlayerCollision>().DeathEvent += OnDeath;
-        _gameData.Menu.SetActive(false);
+        _gameData.Fade.FadeIn();
     }
 
     public void ExitGame()
@@ -37,7 +38,15 @@ public class Game : MonoBehaviour
 
     private void OnNextLevel()
     {
+        _gameData.Fade.AnimEndEvent += NextLevelAfterAnim;
+        _gameData.Fade.FadeOut();
+    }
+
+    private void NextLevelAfterAnim()
+    {
+        _gameData.Fade.AnimEndEvent -= NextLevelAfterAnim;
         _level.StartLevel(_gameData.LevelData.Number + 1);
+        _gameData.Fade.FadeIn();
     }
 
     public void OnDeath()

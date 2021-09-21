@@ -1,16 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class ProgressBar : MonoBehaviour
 {
-    public Text CurLevel;
-    public Text NextLevel;
-    public Image Field;
+    [SerializeField] private Text CurLevel;
+    [SerializeField] private Text NextLevel;
+    [SerializeField] private Image Field;
 
-    public Transform Target;
-    public float LengthLevel;
+    [SerializeField] private Transform Target;
+    [SerializeField] private float LengthLevel;
 
     public void Init(int numberLevel, float lengthLevel)
     {

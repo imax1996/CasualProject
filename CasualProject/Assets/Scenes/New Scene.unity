@@ -328,7 +328,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 68771055}
-  - component: {fileID: 68771056}
   m_Layer: 5
   m_Name: Menu
   m_TagString: Untagged
@@ -359,18 +358,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &68771056
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 68771054}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 03deb6fc3e4cf5e41bfab47b092550ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &183252944
 GameObject:
   m_ObjectHideFlags: 0
@@ -536,6 +523,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Menu: {fileID: 68771054}
   LevelData: {fileID: 2128877936}
+  Fade: {fileID: 1276334938}
 --- !u!114 &186441123
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -591,7 +579,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02490bf12abcec043b181c2e43c29a71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NeedInputs: 
   _arrows: {fileID: 1651895859}
 --- !u!4 &295059026
 Transform:
@@ -1691,13 +1678,14 @@ GameObject:
   - component: {fileID: 1276334937}
   - component: {fileID: 1276334936}
   - component: {fileID: 1276334935}
+  - component: {fileID: 1276334938}
   m_Layer: 5
   m_Name: Fade
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1276334935
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1711,8 +1699,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
-  m_RaycastTarget: 1
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -1752,9 +1740,22 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -540, y: -960}
-  m_SizeDelta: {x: -1080, y: -1920}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1276334938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1276334934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2579b952b194123459603c25ed07c19d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _speedAnim: 1
 --- !u!1 &1297308217
 GameObject:
   m_ObjectHideFlags: 0
@@ -2235,7 +2236,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _arrowPrefab: {fileID: 4945902878925214416, guid: a42b400a308b21d4b87756fdf7a9ff06, type: 3}
-  ArrowsList: []
 --- !u!1 &1689944672
 GameObject:
   m_ObjectHideFlags: 0
@@ -2440,10 +2440,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5639d9c720a76342a038f4e5a2a15a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToOneInputFirstLevel: 1.5
-  offsetTimeToInputOnLevel: 0.1
-  timeBeforeFirstObstacle: 2
-  timeAfterLastObstacle: 1
+  _timeToOneInputFirstLevel: 1.5
+  _offsetTimeToInputOnLevel: 0.1
+  _timeBeforeFirstObstacle: 2
+  _timeAfterLastObstacle: 1
 --- !u!114 &1917094744
 MonoBehaviour:
   m_ObjectHideFlags: 0

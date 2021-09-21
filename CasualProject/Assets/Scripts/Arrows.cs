@@ -1,11 +1,11 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Arrows : MonoBehaviour
 {
-    public GameObject _arrowPrefab;
-    public List<GameObject> ArrowsList;
+    [SerializeField] private GameObject _arrowPrefab;
+
+    public List<GameObject> ArrowsList { get; private set; }
 
     private void Awake()
     {

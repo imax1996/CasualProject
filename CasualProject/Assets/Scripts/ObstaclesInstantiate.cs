@@ -1,14 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ObstaclesInstantiate : MonoBehaviour
 {
     private ObstacleCreatorData _creatorData;
 
-    public ObstacleData[] LeftObstaclesPrefab;
-    public ObstacleData[] ForwardObstaclesPrefab;
-    public ObstacleData[] RightObstaclesPrefab;
+    [SerializeField] private ObstacleData[] LeftObstaclesPrefab;
+    [SerializeField] private ObstacleData[] ForwardObstaclesPrefab;
+    [SerializeField] private ObstacleData[] RightObstaclesPrefab;
 
     private void Awake()
     {

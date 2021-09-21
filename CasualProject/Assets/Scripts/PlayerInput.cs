@@ -1,12 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerInput : MonoBehaviour
 {
     public event System.Action<InputZoneData.Direction> InputEvent;
 
-    public Camera Camera;
+    [SerializeField] private Camera Camera;
 
     private Vector3 DownPos;
     private Vector3 UpPos;

@@ -1,15 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ObstaclesCustomization : MonoBehaviour
 {
     private ObstacleCreatorData _creatorData;
 
-    public float timeToOneInputFirstLevel;
-    public float offsetTimeToInputOnLevel;
-    public float timeBeforeFirstObstacle;
-    public float timeAfterLastObstacle;
+    [SerializeField] private float _timeToOneInputFirstLevel;
+    [SerializeField] private float _offsetTimeToInputOnLevel;
+    [SerializeField] private float _timeBeforeFirstObstacle;
+    [SerializeField] private float _timeAfterLastObstacle;
 
     private void Awake()
     {
@@ -19,11 +17,11 @@ public class ObstaclesCustomization : MonoBehaviour
     public void Init(int levelNumber, float speedPlayer)
     {
         ObstacleData[] obstacles = _creatorData.Obstacles;
-        Vector3 obstaclePos = new Vector3(0, 0, timeBeforeFirstObstacle * speedPlayer);
+        Vector3 obstaclePos = new Vector3(0, 0, _timeBeforeFirstObstacle * speedPlayer);
 
         for (int i = 0; i < obstacles.Length; i++)
         {
-            obstacles[i].GetComponent<Obstacle>().Init(levelNumber, (timeToOneInputFirstLevel - offsetTimeToInputOnLevel * levelNumber) * speedPlayer);
+            obstacles[i].GetComponent<Obstacle>().Init(levelNumber, (_timeToOneInputFirstLevel - _offsetTimeToInputOnLevel * levelNumber) * speedPlayer);
             obstacles[i].transform.position = obstaclePos;
 
             float posX = obstaclePos.x + ExitFloat(obstacles[i].Exit);
@@ -31,7 +29,7 @@ public class ObstaclesCustomization : MonoBehaviour
             obstaclePos = new Vector3(posX, 0, posZ);
         }
 
-        _creatorData.Length = obstaclePos.z + timeAfterLastObstacle * speedPlayer;
+        _creatorData.Length = obstaclePos.z + _timeAfterLastObstacle * speedPlayer;
     }
 
     private float ExitFloat(ObstacleData.PosOnLevel exitPos)

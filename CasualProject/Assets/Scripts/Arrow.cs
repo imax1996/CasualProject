@@ -1,12 +1,12 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class Arrow : MonoBehaviour
 {
-    public float _speedAnimation;
-    public Image arrow;
+    [SerializeField] private float _speedAnimation;
+
+    private Image arrow;
 
     private void Awake()
     {
